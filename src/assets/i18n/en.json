@@ -1,0 +1,10 @@
+
+{
+    "app":{
+       "Home": {
+        "title": "Home",
+        "About": "About Us",
+        "Contact": "Contact Us"
+    }
+    }
+}
