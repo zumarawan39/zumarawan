@@ -1,7 +1,7 @@
 // src/utils/AppConfig.ts
 import { LocalePrefixMode } from 'next-intl/routing';
+const localePrefix: LocalePrefixMode = 'never'; // instead of 'as-needed'
 
-const localePrefix: LocalePrefixMode = 'as-needed';
 
 export const AppConfig = {
   name: 'Zumar Awan',
@@ -10,8 +10,8 @@ export const AppConfig = {
   localePrefix,
   pathname: {
     '/': {
-      en: '/',
-      ur: '/',
+      en: '/en',
+      ur: '/ur',
     },
   },
 };

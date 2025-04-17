@@ -5,14 +5,10 @@ const Home = () => {
   const t = useTranslations('app.Home');
   return (
     <>
-    {/* <div className='border container m-auto'>
+    <div>
     <h1>{t('title')}</h1>
       
-    </div> */}
-    <div className="bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark">
-  Hello Theme!
-</div>
-
+    </div>
     </>
   )
 }

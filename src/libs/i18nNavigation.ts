@@ -7,7 +7,6 @@ import { defineRouting } from 'next-intl/routing';
 export const routing = defineRouting({
   locales: AppConfig.locales,
   defaultLocale: AppConfig.defaultLocale,
-  // pathnames: AppConfig.pathname,
   localePrefix: AppConfig.localePrefix,
 });
 
