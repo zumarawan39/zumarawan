@@ -1,0 +1,238 @@
+@use '../../assets/scss/utils/variable' as variable;
+
+.button {
+  border: 0;
+  border-radius: variable.$border-radius;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  color: variable.$white;
+  transition: 350ms all ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &:disabled {
+    background-color: rgb(114, 135, 242, 0.85);
+    cursor: not-allowed;
+  }
+
+  &:hover:is(&.animate) {
+    padding-right: 50px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 100%;
+      background-image: url('../../assets/icons/right-arrow-white.svg');
+      background-repeat: no-repeat;
+      right: 0;
+      top: 30%;
+      border-radius: variable.$border-radius;
+    }
+  }
+}
+
+.link {
+  background-color: transparent !important;
+  border: none;
+  min-width: auto;
+  height: auto;
+  text-decoration: none;
+  padding: 0px !important;
+  text-align: left;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 350ms all ease;
+
+  :disabled {
+    color: red !important;
+    background-color: red;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  span {
+    color: variable.$primary-color;
+    font-size: 16px;
+  }
+}
+
+.Primary {
+  background-color: variable.$primary-color;
+  position: relative;
+
+  &:hover:not([disabled]) {
+    background-color: #14B8A6;
+  }
+}
+
+.PrimaryOutline {
+  background-color: transparent;
+  border: 1px solid variable.$primary-color;
+
+  span {
+    color: variable.$primary-color !important;
+  }
+
+  &:hover {
+    span {
+      color: #ffffff !important;
+    }
+  }
+
+  &:hover:not([disabled]) {
+    background-color: variable.$primary-color;
+  }
+}
+
+.DangerOutline {
+  background-color: transparent;
+  border: 1px solid variable.$danger-color;
+
+  span {
+    color: variable.$danger-color !important;
+  }
+
+  &:hover {
+    span {
+      color: #ffffff !important;
+    }
+
+    border: 1px solid variable.$danger-color;
+  }
+
+  &:hover:not([disabled]) {
+    background-color: variable.$danger-color;
+  }
+}
+
+.SecondaryOutline {
+  background-color: transparent;
+  border: 1px solid variable.$tertiary-color;
+
+  span {
+    color: #777777 !important;
+  }
+
+  &:hover {
+    span {
+      color: #ffffff !important;
+    }
+
+    border: 1px solid variable.$tertiary-color;
+  }
+
+  &:hover:not([disabled]) {
+    background-color: variable.$tertiary-color;
+  }
+}
+
+.Secondary {
+  color: variable.$primary-color;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+
+  &:hover:not([disabled]) {
+    color: white;
+    background-color: rgb(23, 57, 109);
+  }
+}
+
+.Success {
+  background-color: variable.$success-color;
+
+  &:hover:not([disabled]) {
+    background-color: rgba(25, 135, 84, 0.9);
+  }
+}
+
+.Danger {
+  background-color: variable.$danger-color;
+
+  &:hover:not([disabled]) {
+    background-color: rgba(220, 53, 70, 0.9);
+  }
+}
+
+.Warning {
+  background-color: variable.$warning-color;
+
+  &:hover:not([disabled]) {
+    background-color: rgba(255, 193, 7, 0.9);
+  }
+}
+
+.Action {
+  color: #484848;
+  background-color: variable.$gray-color;
+
+  &:hover:not([disabled]) {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  span {
+    color: #484848;
+  }
+}
+
+.info {
+  color: variable.$info-color !important;
+}
+
+.danger {
+  color: variable.$danger-color !important;
+}
+
+.success {
+  color: variable.$success-color !important;
+}
+
+.Small {
+  span {
+    font-size: 0.75rem;
+  }
+
+  padding: 8px 12px;
+}
+.XSmall {
+  span {
+    font-size: 12px;
+  }
+
+  padding: 5px 18px;
+}
+
+.Medium {
+  span {
+    font-size: 14px;
+  }
+
+  padding: 14px 20px;
+}
+
+.Large {
+  span {
+    font-size: 16px;
+  }
+
+  padding: 1.063rem 0.6rem;
+}
+
+.disabled {
+  cursor: not-allowed;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.white {
+  color: #ffffff !important;
+}

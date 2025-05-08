@@ -19,7 +19,7 @@ export default function Layout(props: {
   children: React.ReactNode;
   params: { locale?: string };
 }) {
-  const locale = props.params?.locale ?? routing.defaultLocale;
+  const locale =  props.params?.locale ?? routing.defaultLocale;
 
   return (
     <AppLayout params={{ locale }}>
@@ -73,17 +73,17 @@ export default function Layout(props: {
             </Link>
           </div>
           {/* <div className="h-28 w-1 !bg-black dark:bg-white"> */}
-          <div className="h-56 w-0.5 bg-primary ransition-colors duration-300"></div>
+          <div className="2xl:h-56 md:h-40  w-0.5 bg-primary ransition-colors duration-300"></div>
         </div>
-        <div className=" mx-auto border-2 border-yellow-500 md:w-10/12 sm:w-full">
+        <div className=" mx-auto md:w-10/12 sm:w-full">
           {props.children}
         </div>
-        <div className="flex flex-col items-center w-1/12 fixed top-96 h-96 right-0 sm:hidden">
-          <div className="h-56 w-0.5 bg-primary ransition-colors duration-300 absolute -top-96"></div>
+        <div className="flex flex-col items-center w-1/12 fixed lg:top-96 lg:h-96 right-0 sm:hidden">
+          <div className="2xl:h-56 md:h-40 w-0.5 bg-primary ransition-colors duration-300 absolute lg:-top-96"></div>
            
           <Link
             href="mailto:zumarawan39@gmail.com"
-            className="transform -rotate-90 origin-bottom whitespace-nowrap tracking-widest mt-16  cursor-pointer  text-lg lg:ml-5"
+            className="transform -rotate-90 origin-bottom whitespace-nowrap tracking-widest lg:mt-16 md:mt-8  cursor-pointer  lg:text-lg md:text-sm lg:ml-5"
             style={{
               letterSpacing: "8px",
             }}

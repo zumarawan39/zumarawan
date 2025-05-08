@@ -10,19 +10,19 @@
     ],
     theme: {
       screens: {
-        sm: { min: "250px", max: "576px" },
+        sm: { min: '250px', max: '576px' },
         // => @media (min-width: 640px and max-width: 767px) { ... }
-
-        md: { min: "768px" },
+  
+        md: { min: '768px' },
         // => @media (min-width: 768px and max-width: 1023px) { ... }
-
-        lg: { min: "976px" },
+  
+        lg: { min: '976px' },
         // => @media (min-width: 1024px and max-width: 1279px) { ... }
-
-        xl: { min: "1280px" },
+  
+        xl: { min: '1280px' },
         // => @media (min-width: 1280px and max-width: 1535px) { ... }
-
-        "2xl": { min: "1440px" },
+  
+        '2xl': { min: '1440px' },
       },
       // Add or modify the fontWeights property
       colors: {
@@ -162,6 +162,10 @@
           DEFAULT: "0 0 20px rgba(23,57,109)",
           blue: "-1px 1px 15px 4px rgba(23,57,109)",
           "gray-light-md": "0 0 20px #c9c9c9",
+        },
+        fontFamily: {
+          heading: ['var(--font-poppins)', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],       // e.g. if you like Inter for text
         },
       },
     },

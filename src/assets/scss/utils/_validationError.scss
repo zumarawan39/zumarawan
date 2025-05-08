@@ -1,0 +1,36 @@
+@use './variable' as variable;
+
+.validation-error {
+  outline: solid;
+  outline-width: 1px !important;
+  outline-color: variable.$danger-color !important;
+  border-radius: 4px;
+
+  &:focus,
+  &:active {
+    border-color: variable.$danger-color !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #dc354636 !important;
+  }
+}
+
+.react-tel-input .form-control.validation-error {
+  outline: solid;
+  outline-width: 1px !important;
+  outline-color: variable.$danger-color !important;
+  border-radius: 4px;
+}
+.validation-select-error {
+  outline: solid;
+  outline-width: 1px;
+  outline-color: variable.$danger-color;
+  border-radius: 12px;
+
+  &:focus,
+  &:active {
+    border-color: variable.$danger-color !important;
+
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #dc354636 !important;
+  }
+}

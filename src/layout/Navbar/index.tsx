@@ -5,6 +5,7 @@ import LightLogo from "../../../public/assets/images/2.png";
 import DarkLogo from "../../../public/assets/images/1.png";
 import { NavLinks } from "@/utils/constant";
 import Link from "next/link";
+import styles from "./navbar.module.scss";
 import {
   FiSun,
   FiMoon,
@@ -20,6 +21,8 @@ import LanguageSelector from "@/components/LanguageSelector";
 import Cross from "@/assets/icons/cross.png";
 import AppLogo from "@/components/Applogo";
 import { FaBars } from "react-icons/fa";
+import { usePathname, useRouter } from "@/libs/i18nNavigation";
+import { playClickSound } from "@/utils/playSound";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -30,7 +33,7 @@ const Navbar = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     dispatch(setTheme(newTheme));
   };
-
+  const router = usePathname();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 250);
@@ -51,13 +54,19 @@ const Navbar = () => {
       document.body.style.overflow = "auto"; // Cleanup on unmount
     };
   }, [isMobileMenuOpen]);
+
+  const activeLink = (path: string) => {
+    return router === path ? "activeLink" : "";
+  };
   return (
     <div>
       <nav className="md:w-10/12 mx-auto flex justify-between items-center -mt-2 sm:w-full">
         {/* Nav logo  */}
 
         <div>
-      <div className="md:hidden"><AppLogo /></div>
+          <div className="md:hidden">
+            <AppLogo />
+          </div>
           <Link href="/" className="hover:cursor-pointer sm:hidden">
             <div className="logo">
               <Image
@@ -74,7 +83,13 @@ const Navbar = () => {
           <ul className="flex items-center gap-6 text-lg sm:hidden ">
             {NavLinks.map((link, idx) => (
               <li key={idx}>
-                <Link href={link.link}>{link.lable}</Link>
+                 <Link
+                    href={link.link}
+                    className={`${styles.underlineTransition} ${activeLink(link.link)}`}
+                    onClick={()=> playClickSound()}
+                  >
+                    {link.lable}
+                  </Link>
               </li>
             ))}
           </ul>
@@ -101,7 +116,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-5 md:hidden">
           <LanguageSelector />
-      
+
           <button
             onClick={toggleTheme}
             className="p-1 rounded-full bg-primary dark:bg-gray-700 text-gray-800 dark:text-gray-100 transition-colors"
@@ -138,7 +153,10 @@ const Navbar = () => {
 
           <button
             className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => {
+              playClickSound()
+              setIsMobileMenuOpen(!isMobileMenuOpen)
+            }}
           >
             <FaBars className="w-7 h-7 " />
           </button>
@@ -163,7 +181,12 @@ const Navbar = () => {
               <AppLogo />
               <div
                 className="border border-primary rounded-full p-3"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+
+                onClick={() => {
+                  playClickSound()
+                  setIsMobileMenuOpen(!isMobileMenuOpen)
+                }}
+                
               >
                 <Image
                   src={Cross}
@@ -174,10 +197,22 @@ const Navbar = () => {
                 />
               </div>
             </div>
-            <ul className="flex flex-col items-start gap-4 py-10 px-8">
+            <ul className="flex items-center gap-6 text-lg sm:hidden ">
               {NavLinks.map((link, idx) => (
                 <li key={idx}>
-                  <Link href={link.link}>{link.lable}</Link>
+                  {/* <Link
+                    href={link.link}
+                    className={`${styles.underlineTransition} ${activeLink(link.link)}`}
+                  >
+                    {link.lable}
+                  </Link> */}
+                  <Link
+                    href={link.link}
+                    className={`${styles.underlineTransition} ${activeLink(link.link)}`}
+                    onClick={()=> playClickSound()}
+                  >
+                    {link.lable}
+                  </Link>
                 </li>
               ))}
             </ul>

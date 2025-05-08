@@ -1,0 +1,49 @@
+.modal-wrapper {
+  backdrop-filter: blur(1px);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #0c0c0d99;
+  transition: 350ms all ease;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  animation: fadeIn 0.3s ease;
+
+  div {
+    border-radius: 20px;
+  }
+}
+
+.modal-wrapper > div {
+  background-color: #ffffff;
+}
+
+.modal-wrapper > div.sm {
+  width: 500px;
+}
+
+.modal-wrapper > div.lg {
+  width: 800px;
+}
+
+@media (min-width: 576px) {
+  .modal-wrapper > div.sm {
+    width: 570px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
