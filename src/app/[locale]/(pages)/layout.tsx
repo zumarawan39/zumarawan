@@ -19,8 +19,8 @@ export default function Layout(props: {
   children: React.ReactNode;
   params: { locale?: string };
 }) {
-  const locale =  props.params?.locale ?? routing.defaultLocale;
 
+  const locale = props.params?.locale ?? routing.defaultLocale;
   return (
     <AppLayout params={{ locale }}>
       <div className="flex  justify-between relative">

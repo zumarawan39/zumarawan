@@ -22,7 +22,7 @@ import Cross from "@/assets/icons/cross.png";
 import AppLogo from "@/components/Applogo";
 import { FaBars } from "react-icons/fa";
 import { usePathname, useRouter } from "@/libs/i18nNavigation";
-import { playClickSound } from "@/utils/playSound";
+// import { playClickSound } from "@/utils/playSound";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -60,7 +60,7 @@ const Navbar = () => {
   };
   return (
     <div>
-      <nav className="md:w-10/12 mx-auto flex justify-between items-center -mt-2 sm:w-full">
+      <nav className="md:w-10/12 mx-auto flex justify-between items-center -mt-2 ">
         {/* Nav logo  */}
 
         <div>
@@ -86,7 +86,7 @@ const Navbar = () => {
                  <Link
                     href={link.link}
                     className={`${styles.underlineTransition} ${activeLink(link.link)}`}
-                    onClick={()=> playClickSound()}
+                    // onClick={()=> playClickSound()}
                   >
                     {link.lable}
                   </Link>
@@ -154,7 +154,7 @@ const Navbar = () => {
           <button
             className="md:hidden p-2"
             onClick={() => {
-              playClickSound()
+              // playClickSound()
               setIsMobileMenuOpen(!isMobileMenuOpen)
             }}
           >
@@ -183,7 +183,7 @@ const Navbar = () => {
                 className="border border-primary rounded-full p-3"
 
                 onClick={() => {
-                  playClickSound()
+                  // playClickSound()
                   setIsMobileMenuOpen(!isMobileMenuOpen)
                 }}
                 
@@ -197,19 +197,13 @@ const Navbar = () => {
                 />
               </div>
             </div>
-            <ul className="flex items-center gap-6 text-lg sm:hidden ">
+            <ul className="flex items-center gap-6 text-lg sm:flex-col sm:items-start sm:gap-10 px-10  ">
               {NavLinks.map((link, idx) => (
                 <li key={idx}>
-                  {/* <Link
-                    href={link.link}
-                    className={`${styles.underlineTransition} ${activeLink(link.link)}`}
-                  >
-                    {link.lable}
-                  </Link> */}
                   <Link
                     href={link.link}
-                    className={`${styles.underlineTransition} ${activeLink(link.link)}`}
-                    onClick={()=> playClickSound()}
+                    className={`${styles.underlineTransition} ${activeLink(link.link)} ${theme === "light" ? "text-white" : "text-black"}` }
+                    onClick={() => setIsMobileMenuOpen(false)} 
                   >
                     {link.lable}
                   </Link>

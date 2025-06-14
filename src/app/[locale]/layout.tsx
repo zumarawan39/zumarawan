@@ -17,31 +17,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Zumar Awan',
+  title: "Zumar Awan",
   icons: {
-    icon: '/intail-logo.png',
+    icon: "/intail-logo.png",
   },
 };
 
-export default async function RootLayout(props: {
+export default async function RootLayout({
+  children,
+  params,
+}: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
-  const { locale } = await props.params;
+  const locale = params.locale;
 
   setRequestLocale(locale);
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  // Using internationalization in Client Components
   const messages = await getMessages();
+
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang={locale}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <StoreProvider>       {props.children}</StoreProvider>
+          <StoreProvider>
+
+            {children}</StoreProvider>
         </NextIntlClientProvider>
       </body>
     </html>

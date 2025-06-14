@@ -11,6 +11,7 @@ import { slideInLeft, slideInRight } from "@/utils/animation";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Button from "@/components/Button";
 import WhatIDo from "@/components/WhatIdo";
+
 const Home = () => {
   const t = useTranslations("app.Home");
   const theme = useSelector((state: RootState) => state?.theme?.mode);
@@ -34,50 +35,43 @@ const Home = () => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
     >
-<div className="relative lg:mb-28">
-
-<div className="flex items-center justify-between sm:flex-col md:!py-6 lg:py-14 w-full  current-section " ref={sectionRef}>
-        {/* Left div with left animation */}
-        <motion.div
-          className="flex flex-col items-start  gap-4 sm:my-10"
-          variants={slideInLeft}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <h1 className="text-6xl sm:text-xl font-semibold">Hi, I’m Zumar Awan</h1>
-          <h2 className="text-4xl md:!text-2.5xl sm:text-xl font-semibold">
-            Software Engineer | Creative Thinker & Problem Solver
-          </h2>
-          <h2 className="2xl:text-2.5xl  md:!text-2xl ">
-            From Concept to Code - Delivering Impactful Software Engineering
-            Excellence to Elevate Your Business
-          </h2>
-          <Button
-            type="Primary"
-           className="md:mt-10 sm:mt-5 "
-            onClick={() =>
-              window.open("https://calendly.com/zumarawan39/30min", "_blank")
-            }
+      <div className="relative lg:mb-28">
+        <div className="flex items-center justify-between sm:flex-col md:!py-6 lg:py-14 w-full  current-section " ref={sectionRef}>
+          {/* Left div with left animation */}
+          <motion.div
+            className="flex flex-col items-start  gap-4 sm:my-10"
+            variants={slideInLeft}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="flex items-center gap-4 text-lg sm:text-sm sm:gap-2 ">
-              Book a Call
-              <Calendar className="w-6 h-6 mr-2 inline sm:w-3 sm:h-3" />
-            </div>
-          </Button>
-        </motion.div>
+            <h1 className="text-6xl sm:text-xl font-semibold">{t("greeting")}</h1>
+            <h2 className="text-4xl md:!text-2.5xl sm:text-xl font-semibold">{t("title")}</h2>
+            <h2 className="2xl:text-2.5xl  md:!text-2xl ">{t("subtitle")}</h2>
+            <Button
+              type="Primary"
+              className="md:mt-10 sm:mt-5 "
+              onClick={() =>
+                window.open("https://calendly.com/zumarawan39/30min", "_blank")
+              }
+            >
+              <div className="flex items-center gap-4 text-lg sm:text-sm sm:gap-2 ">
+                {t("book_a_call")}
+                <Calendar className="w-6 h-6 mr-2 inline sm:w-3 sm:h-3" />
+              </div>
+            </Button>
+          </motion.div>
 
-        {/* Right div with right animation */}
-        <motion.div
-          variants={slideInRight}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex justify-end md:ml-5"
-        >
-          <Image src={MyImage2} height={600} width={800} alt="Zumar Awan" />
-        </motion.div>
-      </div>
-      <div onClick={scrollToNextSection} className="hover:cursor-pointer flex justify-center md:mt-10 lg:mt-24 ">
-
-        <ScrollIndicator />
-      </div>
+          {/* Right div with right animation */}
+          <motion.div
+            variants={slideInRight}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex justify-end md:ml-5"
+          >
+            <Image src={MyImage2} height={600} width={800} alt="Zumar Awan" />
+          </motion.div>
+        </div>
+        <div onClick={scrollToNextSection} className="hover:cursor-pointer flex justify-center md:mt-10 lg:mt-24 ">
+          <ScrollIndicator />
+        </div>
       </div>
       <div>
         <WhatIDo/>

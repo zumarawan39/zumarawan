@@ -1,10 +1,25 @@
-
 {
-    "app":{
-       "Home": {
-        "title": "Home",
-        "About": "About Us",
-        "Contact": "Contact Us"
+  "app": {
+    "Home": {
+        "greeting": "Hi, I’m Zumar Awan",
+        "title": "Software Engineer | Creative Thinker & Problem Solver",
+        "subtitle": "From Concept to Code - Delivering Impactful Software Engineering Excellence to Elevate Your Business",
+        "book_a_call": "Book a Call"
+      },
+    "WhatIDo": {
+      "title": "< What I do? />",
+      "subtitle": "I love to code for contract based projects and help companies expand their businesses.🤜🤛",
+      "techExpertise": "My tech expertise are as follows:",
+      "FullStackDev": {
+        "skillName": "Full-stack Web Development",
+        "descriptionArr": [
+          "Developing responsive single page web applications front end using React.js, Next.js, Redux.js, Angular, TailwindCSS, Material-UI,  HTML/CSS and Bootstrap.",
+          "Creating secure and fast backends for application utilizing Node.js and Express.js",
+          "Interacting with the databases like MongoDB, MySQL, PostgreSQL using ODMs/ORMs like Mongoose, Sequelize and Prisma respectively.",
+          "Utilizing TypeScript for its powerful features like static typing etc to develop both front-end and back-end applications with enhanced code quality, maintainability, and scalability.",
+          "Developing and consuming RESTful APIs, employing modern programming practices to ensure integration."
+        ]
+      }
     }
-    }
+  }
 }
