@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Slide } from "react-awesome-reveal";
 import ExperiencePageSVG from "../../../../../public/assets/images/experience.png";
 import { ExperienceCardLoader } from "@/components/ExperienceCard";
+import { useTranslations } from "next-intl";
 
 interface Experience {
   title: string;
@@ -16,54 +17,45 @@ interface Experience {
   details: string[];
 }
 
-const experiences: Experience[] = [
-  {
-    title: "Jr Software Developer",
-    company: "AiGROS Tech",
-    location: "",
-    date: "11/2024 – Present",
-    mode: "Hybrid",
-    logo: "/assets/images/cropped-aigros-logo-1.png",
-    link:"https://aigros.com/",
-    details: [
-      "Developing and enhancing web applications for efficiency and usability.",
-      "Collaborating with team to ensure seamless user experience.",
-      "Building skills in front-end and back-end technologies.",
-    ],
-  },
-  {
-    title: "Fresh Graduates Bootcamp",
-    company: "BolTech Solutions",
-    location: "",
-    date: "07/2024 – 10/2024",
-    mode: "Onsite",
-    logo:"/assets/images/logo-boltech.png",
-    link:"https://boltechsolutions.com/",
-    details: [
-      "Completed a 2-month bootcamp focused on MERN Stack development.",
-      "Worked on real-world projects alongside React professionals.",
-    ],
-  },
-  {
-    title: "Software Engineer Trainee",
-    company: "Secliz Pvt Ltd",
-    location: "",
-    date: "06/2023 – 07/2024",
-    mode: "Onsite",
-    logo:"/assets/images/seebiz_logo.svg",
-    link:"https://see.biz/",
-    details: [
-      "Completed 1 year Full Stack training under senior mentorship.",
-      "Worked on several projects (mentioned in the portfolio).",
-      "Built dynamic web apps using Angular, React JS and Node.js.",
-    ],
-  },
-];
-
 const Experience = () => {
+  const t = useTranslations("app.Experience");
   const [loading, setLoading] = useState(true);
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Get experiences from translations
+  const experiences: Experience[] = [
+    {
+      title: t("experiences.0.title"),
+      company: t("experiences.0.company"),
+      location: "",
+      date: t("experiences.0.date"),
+      mode: t("experiences.0.mode"),
+      logo: "/assets/images/cropped-aigros-logo-1.png",
+      link: "https://aigros.com/",
+      details: t.raw("experiences.0.details"),
+    },
+    {
+      title: t("experiences.1.title"),
+      company: t("experiences.1.company"),
+      location: "",
+      date: t("experiences.1.date"),
+      mode: t("experiences.1.mode"),
+      logo: "/assets/images/logo-boltech.png",
+      link: "https://boltechsolutions.com/",
+      details: t.raw("experiences.1.details"),
+    },
+    {
+      title: t("experiences.2.title"),
+      company: t("experiences.2.company"),
+      location: "",
+      date: t("experiences.2.date"),
+      mode: t("experiences.2.mode"),
+      logo: "/assets/images/seebiz_logo.svg",
+      link: "https://see.biz/",
+      details: t.raw("experiences.2.details"),
+    },
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
@@ -91,7 +83,7 @@ const Experience = () => {
   }, [loading]);
 
   return (
-    <>
+    <div className="sm:px-4">
       <div className="grid grid-cols-2 sm:grid-cols-1 justify-between items-center w-full ">
         <Slide triggerOnce direction="left">
           <div className="flex flex-col items-center justify-center object-cover">
@@ -108,21 +100,14 @@ const Experience = () => {
           <div className="sm:mb-2 md:mb-2 lg:mb-2 flex flex-col items-center justify-center pt-14 xl:pt-12 2xl:pt-0">
             <Slide triggerOnce direction="right">
               <div className="flex flex-col items-center justify-center content-center gap-4">
-                <h4 className="text-6xl sm:text-xl font-semibold">
-                  Experience
+                <h4 className="text-6xl sm:text-4xl font-semibold">
+                  {t("title")}
                 </h4>
                 <h5 className="text-4xl md:!text-2.5xl sm:text-xl font-semibold">
-                  Work, Internship and Volunteership
+                  {t("subtitle")}
                 </h5>
                 <p className="lg:!text-lg  md:!text-lg text-center">
-                  I'm a passionate software engineer who loves crafting creative
-                  solutions with code. My main area of expertise revolves around
-                  building scalable applications using the MERN stack.
-                  Additionally, I have a strong enthusiasm for fostering tech
-                  communities and actively engage in various tech events.
-                  Guiding and supporting aspiring developers as they begin their
-                  career paths brings me immense joy because we all know the
-                  struggle of finding the missing semicolon.
+                  {t("description")}
                 </p>
               </div>
             </Slide>
@@ -162,7 +147,7 @@ const Experience = () => {
                   <ExperienceCardLoader />
                 ) : (
                   <div className="
-                    flex items-start gap-4 border-gray-200 border-2 rounded-md px-4 py-16 shadow-lg 
+                    flex items-start sm:flex-col gap-4 border-gray-200 border-2 rounded-md px-4 lg:py-16 sm:py-8 shadow-lg 
                     bg-white/50 backdrop-blur-sm
                     transition-all duration-300 ease-in-out
                     hover:shadow-2xl hover:border-green-400 hover:bg-white/70
@@ -179,27 +164,27 @@ const Experience = () => {
                    >
                       <Image src={(exp as Experience).logo} alt="logo" width={100} height={100} />
                     </div>
-                    <div className="flex flex-col gap-2 items-start justify-center">
+                    <div className="flex flex-col gap-2  lg:items-start justify-center sm:justify-between w-full">
                   
                     <div className="flex justify-between w-full">
                       {" "}
-                      <h3 className="text-2xl font-semibold text-green-400">
+                      <h3 className="text-2xl font-semibold sm:text-xl">
                         {(exp as Experience).title}
                       </h3>
-                      <div className="text-sm text-gray-400 mb-2">
+                      <div className="text-sm text-gray-400 mb-2 sm:text-xs">
                         {(exp as Experience).date}
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg font-medium ">
+                    <div className="flex items-center gap-2 sm:justify-between">
+                      <span className="text-lg font-medium sm:text-sm">
                         {(exp as Experience).company}
                       </span>
-                      <span className="text-xs px-2 py-0.5 rounded bg-primary ml-2">
+                      <span className="text-xs px-2 py-0.5 rounded bg-primary md:ml-2 sm:text-xsm">
                         {(exp as Experience).mode}
                       </span>
                     </div>
-                    <ul className="flex flex-col gap-2 items-start  list-disc ml-5 ">
+                    <ul className="flex flex-col gap-2 sm:gap-x-12 items-start list-disc ml-5 sm:text-sm">
                       {(exp as Experience).details?.map(
                         (item: string, i: number) => <li key={i}>{item}</li>
                       )}
@@ -212,7 +197,7 @@ const Experience = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

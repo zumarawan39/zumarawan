@@ -1,7 +1,7 @@
 {
   "app": {
     "Home": {
-        "greeting": "Hi, I’m Zumar Awan",
+        "greeting": "Hi, I'm Zumar Awan",
         "title": "Software Engineer | Creative Thinker & Problem Solver",
         "subtitle": "From Concept to Code - Delivering Impactful Software Engineering Excellence to Elevate Your Business",
         "book_a_call": "Book a Call"
@@ -20,6 +20,45 @@
           "Developing and consuming RESTful APIs, employing modern programming practices to ensure integration."
         ]
       }
+    },
+    "Experience": {
+      "title": "Experience",
+      "subtitle": "Work, Internship and Volunteership",
+      "description": "I'm a passionate software engineer who loves crafting creative solutions with code. My main area of expertise revolves around building scalable applications using the MERN stack. Additionally, I have a strong enthusiasm for fostering tech communities and actively engage in various tech events. Guiding and supporting aspiring developers as they begin their career paths brings me immense joy because we all know the struggle of finding the missing semicolon.",
+      "experiences": [
+        {
+          "title": "Jr Software Developer",
+          "company": "AiGROS Tech",
+          "date": "11/2024 – Present",
+          "mode": "Hybrid",
+          "details": [
+            "Developing and enhancing web applications for efficiency and usability.",
+            "Collaborating with team to ensure seamless user experience.",
+            "Building skills in front-end and back-end technologies."
+          ]
+        },
+        {
+          "title": "Fresh Graduates Bootcamp",
+          "company": "BolTech Solutions",
+          "date": "07/2024 – 10/2024",
+          "mode": "Onsite",
+          "details": [
+            "Completed a 2-month bootcamp focused on MERN Stack development.",
+            "Worked on real-world projects alongside React professionals."
+          ]
+        },
+        {
+          "title": "Software Engineer Trainee",
+          "company": "Secliz Pvt Ltd",
+          "date": "06/2023 – 07/2024",
+          "mode": "Onsite",
+          "details": [
+            "Completed 1 year Full Stack training under senior mentorship.",
+            "Worked on several projects (mentioned in the portfolio).",
+            "Built dynamic web apps using Angular, React JS and Node.js."
+          ]
+        }
+      ]
     }
   }
 }
