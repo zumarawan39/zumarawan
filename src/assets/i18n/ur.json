@@ -21,6 +21,130 @@
         ]
       }
     },
+    "Education": {
+      "title": "تعلیم",
+      "subtitle": "میری قابلیتیں اور سرٹیفیکیشنز",
+      "description": "میری تعلیمی پس منظر کے بارے میں آپ کو جاننے کی ضرورت ہے 🙃",
+      "aboutDegree": "ڈگری کے بارے میں",
+      "aboutCourses": "کورسز کے بارے میں",
+      "coursesDescription": "جدید ترین ٹیکنالوجیز کے ساتھ اپ ڈیٹ رہنے کے لیے آن لائن کورسز اور سرٹیفیکیشنز کے ذریعے مسلسل سیکھنا",
+      "onsiteCourses": "آن سائٹ کورسز",
+      "certificate": "سرٹیفیکیشنز",
+      "noOnsiteCourses": "ابھی تک کوئی آن سائٹ کورس نہیں۔",
+      "noRemoteCertificates": "ابھی تک کوئی ریموٹ سرٹیفیکیشن نہیں۔",
+      "viewCertificate": "سرٹیفیکیشن دیکھیں",
+      "visitInstitution": "ادارہ ملاحظہ کریں",
+      "viewAllCertificates": "تمام سرٹیفیکیشنز دیکھیں",
+      "allCertificates": "تمام سرٹیفیکیشنز",
+      "browseCertificates": "میری تمام سرٹیفیکیشنز اور کورسز کو براؤز کریں",
+      "close": "بند کریں",
+      "clickToViewDetails": "تفصیلات دیکھنے کے لیے کلک کریں",
+      "education": [
+        {
+          "degree": "کمپیوٹر سائنس میں بیچلر آف سائنس",
+          "institution": "ورچوئل یونیورسٹی آف پاکستان",
+          "location": "لاہور، پاکستان",
+          "date": "2021 - 2025",
+          "details": [
+            "⚡ پروگرامنگ کے بنیادی اصولوں، الگورتھمز، اور سافٹ ویئر ڈویلپمنٹ کو شامل کرتے ہوئے جامع کمپیوٹر سائنس نصاب مکمل کیا۔",
+            "⚡ آبجیکٹ اورینٹڈ پروگرامنگ، ڈیٹا سٹرکچرز، اور ڈیٹا بیس مینجمنٹ میں مضبوط بنیاد تیار کی۔",
+            "⚡ آن لائن سیکھنے کے ماحول میں حصہ لیا، خود نظم و ضبط اور وقت کی مینجمنٹ کی مہارتوں کو بہتر بنایا۔",
+            "⚡ عملی کوڈنگ کی صلاحیتوں کو مضبوط بنانے کے لیے مختلف پروگرامنگ پروجیکٹس اور اسائنمنٹس مکمل کیے۔",
+            "⚡ جدید ڈویلپمنٹ ٹولز اور تعاون پر مبنی سافٹ ویئر ڈویلپمنٹ پریکٹس کے ساتھ تجربہ حاصل کیا۔"
+          ]
+        }
+      ],
+      "certificates": [
+        {
+          "name": "ایڈوانس ویب ڈویلپمنٹ",
+          "issuer": "لائٹ کالج",
+          "date": "22/08/2022 - 22/03/2023",
+          "description": [
+            "- گہری فرنٹ اینڈ ویب ڈویلپمنٹ کورس مکمل کیا۔",
+            "- HTML، CSS، JavaScript، اور Bootstrap کا احاطہ کیا۔",
+            "- ریسپانسیو UIs اور انٹرایکٹو فیچرز بنائے۔",
+            "- متعدد حقیقی دنیا کے پروجیکٹس کے ذریعے عملی تجربہ حاصل کیا۔"
+          ],
+          "mode": "onsite"
+        },
+        {
+          "name": "فل اسٹیک ویب ڈویلپمنٹ",
+          "issuer": "کورویٹ سسٹمز",
+          "date": "02/10/2023 - 23/02/2023",
+          "description": [
+            "- MERN اسٹیک کا استعمال کرتے ہوئے فل اسٹیک ڈویلپمنٹ تربیت۔",
+            "- CRUD فنکشنلٹی کے ساتھ مکمل ویب ایپلی کیشنز بنائیں۔",
+            "- REST APIs، authentication، اور routing کو لاگو کیا۔",
+            "- Git اور version control کی بہترین پریکٹس کے ساتھ پروجیکٹس کو deploy کیا۔"
+          ],
+          "mode": "onsite"
+        },
+        {
+          "name": "AWS کلاؤڈ کمپیوٹنگ",
+          "issuer": "کورویٹ سسٹمز",
+          "date": "15/07/2024 - 14/10/2024",
+          "description": [
+            "- EC2، S3، Lambda، اور RDS سمیت بنیادی AWS سروسز کا احاطہ کیا۔",
+            "- کلاؤڈ انفراسٹرکچر، deployment، اور monitoring میں عملی لیبز۔",
+            "- AWS ٹولز کا استعمال کرتے ہوئے real-time scaling اور automation کو لاگو کیا۔",
+            "- cost-effective، محفوظ، اور scalable architectures پر توجہ مرکوز۔"
+          ],
+          "mode": "onsite"
+        },
+        {
+          "name": "MERN اسٹیک ڈویلپر انٹرن شپ",
+          "issuer": "ٹیئرز لمیٹڈ",
+          "date": "24 جون 2024 - 24 اگست 2024",
+          "description": [
+            "- MERN اسٹیک ڈویلپر کے طور پر 2 ماہ کی انٹرن شپ مکمل کی۔",
+            "- MongoDB، Express، React، اور Node.js کا استعمال کرتے ہوئے scalable ویب ایپلی کیشنز بنائیں اور برقرار رکھیں۔",
+            "- Git، Trello، اور Agile methodology کا استعمال کرتے ہوئے ریموٹ ٹیم میں تعاون کیا۔",
+            "- performance optimization، reusable component design، اور API integration پر توجہ مرکوز۔"
+          ],
+          "mode": "remote"
+        },
+        {
+          "name": "CPA: C++ میں پروگرامنگ کے بنیادی اصول",
+          "issuer": "سسکو نیٹ ورکنگ اکیڈمی / C++ انسٹیٹیوٹ",
+          "date": "5 ستمبر 2023",
+          "description": [
+            "- C++ میں پروگرامنگ کے بنیادی اصولوں کی سرٹیفیکیشن مکمل کی۔",
+            "- C++ syntax، OOP، memory handling، اور الگورتھمز کی سمجھ حاصل کی۔",
+            "- console-based ایپلی کیشنز اور problem-solving کی مہارتیں تیار کیں۔",
+            "- سسکو نیٹ ورکنگ اکیڈمی اور C++ انسٹیٹیوٹ کے مشترکہ طور پر جاری کردہ credential۔"
+          ],
+          "mode": "remote"
+        },
+        {
+          "name": "بنیادی تربیتی پروگرام - ویب ڈویلپمنٹ",
+          "issuer": "سی بیز پرائیویٹ لمیٹڈ",
+          "date": "31/06/2023 - 31/07/2024",
+          "description": [
+            "- ویب ڈویلپمنٹ میں 1 سال کا structured تربیتی پروگرام مکمل کیا۔",
+            "- بنیادی ویب ٹیکنالوجیز: HTML5، CSS3، JavaScript (ES6+)، اور responsive design کا احاطہ کیا۔",
+            "- real-time collaboration اور Agile-based workflow کا تجربہ حاصل کیا۔",
+            "- internal tools پر کام کیا اور code reviews اور debugging sessions میں حصہ لیا۔",
+            "- Git، GitHub، اور version control کو daily practice میں لاگو کیا۔",
+            "- mini-projects بنائے اور in-house development tasks میں حصہ لیا۔"
+          ],
+          "mode": ""
+        },
+        {
+          "name": "MERN اسٹیک بوٹ کیمپ",
+          "issuer": "بولٹیک سولوشنز",
+          "date": "1/07/2024 - 1/10/2024",
+          "description": [
+            "- 3 ماہ کا intensive MERN stack بوٹ کیمپ کامیابی سے مکمل کیا۔",
+            "- MongoDB، Express.js، React.js، اور Node.js کے ساتھ عملی تجربہ حاصل کیا۔",
+            "- authentication، routing، اور CRUD features کے ساتھ full-stack پروجیکٹس تیار کیے۔",
+            "- live sessions، weekly challenges، اور real-world assignments میں شرکت کی۔",
+            "- Git، GitHub Projects، اور peer code reviews کے ساتھ groups میں تعاون کیا۔",
+            "- production-like environment میں full-stack concepts کو integrate کرتے ہوئے capstone project بنایا۔"
+          ],
+          "mode": ""
+        }
+      ]
+    },
     "Experience": {
       "title": "تجربہ",
       "subtitle": "کام، انٹرن شپ اور رضاکارانہ خدمات",

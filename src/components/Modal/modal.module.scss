@@ -1,0 +1,42 @@
+.modalHead {
+  position: relative;
+  padding: 20px 30px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
+}
+
+.modalBody {
+  padding: 12px 30px 12px 30px;
+}
+
+.modalFoot {
+  padding: 20px 15px;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.close {
+  background-color: #fff !important;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: -35px;
+  right: -25px;
+  border-radius: 50%;
+  padding: 6px;
+  color: #161616 !important;
+  display: flex;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: 20px;
+    color: #161616;
+  }
+}
