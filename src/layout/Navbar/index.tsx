@@ -197,12 +197,12 @@ const Navbar = () => {
                 />
               </div>
             </div>
-            <ul className="flex items-center gap-6 text-lg sm:flex-col sm:items-start sm:gap-10 px-10  ">
+            <ul className="flex items-center gap-6  text-lg sm:flex-col sm:items-start sm:gap-10 px-10  ">
               {NavLinks.map((link, idx) => (
                 <li key={idx}>
                   <Link
                     href={link.link}
-                    className={`${styles.underlineTransition} ${activeLink(link.link)} ${theme === "light" ? "text-white" : "text-black"}` }
+                    className={`${styles.underlineTransition} ${activeLink(link.link)} ${theme === "light" ? "text-black" : "text-black"}` }
                     onClick={() => setIsMobileMenuOpen(false)} 
                   >
                     {link.lable}

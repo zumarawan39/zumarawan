@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import { Slide } from "react-awesome-reveal";
 import { useTranslations } from "next-intl";
 import EducationPageSVG from "../../../../../public/assets/images/degree.png";
@@ -34,7 +34,7 @@ interface Certificate {
 
 const Education = () => {
   const t = useTranslations("app.Education");
-  const [openSection, setOpenSection] = useState<string | null>("remote");
+  const [openSection, setOpenSection] = useState<string | null>("");
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCertificate, setSelectedCertificate] =
@@ -43,8 +43,8 @@ const Education = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Get education from translations
-  const education: Education[] = [
+  // Get education from translations using useMemo
+  const education: Education[] = useMemo(() => [
     {
       degree: t("education.0.degree"),
       institution: t("education.0.institution"),
@@ -54,10 +54,10 @@ const Education = () => {
       link: "https://www.vu.edu.pk/",
       details: t.raw("education.0.details"),
     },
-  ];
+  ], [t]);
 
-  // Get certificates from translations
-  const certificates: Certificate[] = [
+  // Get certificates from translations using useMemo
+  const certificates: Certificate[] = useMemo(() => [
     {
       name: t("certificates.0.name"),
       issuer: t("certificates.0.issuer"),
@@ -128,15 +128,16 @@ const Education = () => {
         link: "https://boltechsolutions.com/",
         mode: ""
     },
-  ];
+  ], [t]);
 
   // Group certificates by mode
-  const remoteCertificates = certificates.filter(
+  const remoteCertificates = useMemo(() => certificates.filter(
     (cert) => cert.mode === "remote"
-  );
-  const onsiteCertificates = certificates.filter(
+  ), [certificates]);
+  
+  const onsiteCertificates = useMemo(() => certificates.filter(
     (cert) => cert.mode === "onsite"
-  );
+  ), [certificates]);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
@@ -221,8 +222,8 @@ const Education = () => {
   );
 
   return (
-    <>
-      <div className="grid grid-cols-2 sm:grid-cols-1 justify-between items-center w-full lg:py-14 ">
+    <div className="sm:px-4">
+      <div className="grid grid-cols-2 sm:grid-cols-1 sm:flex sm:flex-col-reverse sm:gap-10 justify-between items-center w-full lg:py-14">
         <Slide triggerOnce direction="left">
           <div className="flex flex-col items-center justify-center object-cover">
             <Image
@@ -230,7 +231,7 @@ const Education = () => {
               alt="svg"
               width={500}
               height={500}
-              className="svg-image"
+              className="svg-image  sm:w-40 object-cover sm:h-40"
             />
           </div>
         </Slide>
@@ -254,18 +255,18 @@ const Education = () => {
       </div>
 
       {/* Degree Section */}
-      <div className="py-16">
+      <div className="md:py-16 sm:py-4">
         <Slide triggerOnce direction="up">
           <div className="text-center mb-12">
-            <h3 className="text-6xl  mb-4">{`{ ${t("aboutDegree")} }`}</h3>
+            <h3 className="text-6xl  sm:text-4xl  mb-4">{`{ ${t("aboutDegree")} }`}</h3>
           </div>
         </Slide>
 
         {education.map((edu, index) => (
           <Slide key={index} triggerOnce direction="up" delay={index * 200}>
-            <div className=" mx-auto bg-white border border-gray-100 rounded-lg shadow-lg p-8 mb-8 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-start space-x-6">
-                <div className="">
+            <div className=" mx-auto bg-white border border-gray-100 rounded-lg shadow-lg md:p-8 sm:py-4 mb-8 hover:shadow-xl transition-shadow duration-300">
+              <div className="flex sm:flex-col-reverse items-start space-x-6">
+                <div className="sm:mx-auto sm:mb-4 sm:hidden">
                   <div className="w-40 h-40 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
                     <Image
                       src={edu.logo}
@@ -276,12 +277,12 @@ const Education = () => {
                     />
                   </div>
                 </div>
-                <div className="flex-1">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="lg:flex-1">
+                  <div className="flex items-center justify-between mb-4 sm:gap-2 sm:items-start">
                     <h4 className="lg:text-4xl sm:text-2xl text-3xl text-black">
                       {edu.degree}
                     </h4>
-                    <span className="text-md  md:text-sm text-sm bg-primary px-3 py-1 rounded-full text-black">
+                    <span className="text-nowrap md:text-sm text-sm bg-primary text-white px-3 py-1 sm:mx-2 sm:text-xsm sm:mt-2 rounded-full">
                       {edu.date}
                     </span>
                   </div>
@@ -295,7 +296,7 @@ const Education = () => {
                     {edu.details.map((detail, detailIndex) => (
                       <p
                         key={detailIndex}
-                        className="!text-gray-300 leading-relaxed text-lg"
+                        className="!text-gray-300 leading-relaxed text-lg sm:text-sm"
                       >
                         {detail}
                       </p>
@@ -332,10 +333,10 @@ const Education = () => {
       </div>
 
       {/* Certificates Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="md:py-16 sm:py-4 bg-gray-50">
         <Slide triggerOnce direction="up">
           <div className="text-center mb-12">
-            <h3 className="text-6xl  mb-4">{`{ ${t("aboutCourses")} }`}</h3>
+            <h3 className="text-6xl sm:text-4xl  mb-4">{`{ ${t("aboutCourses")} }`}</h3>
             <p className="text-gray-600 lg:text-lg sm:text-sm text-sm mx-auto">
               {t("coursesDescription")}
             </p>
@@ -343,18 +344,18 @@ const Education = () => {
         </Slide>
 
         {/* Accordion UI */}
-        <div className=" mx-auto mb-8">
+        <div className="mx-auto mb-4">
           {/* Onsite Courses Accordion */}
           <div className="border shadow-md border-gray-200">
             <button
-              className={`w-full flex justify-between items-center py-4 px-6 text-left text-2xl font-semibold transition-colors duration-300 ${openSection === "onsite" ? "bg-primary text-white" : "bg-white text-gray-800 hover:bg-gray-100"}`}
+              className={`sm:text-lg w-full flex justify-between items-center py-4 px-6 text-left text-2xl font-semibold transition-colors duration-300 ${openSection === "onsite" ? "bg-primary text-white" : "bg-white text-gray-800 hover:bg-gray-100"}`}
               onClick={() =>
                 setOpenSection(openSection === "onsite" ? null : "onsite")
               }
             >
               {t("onsiteCourses")}
               <span
-                className={`transition-transform duration-300 ${openSection === "onsite" ? "rotate-180 text-white" : "rotate-0 "} `}
+                className={`transition-transform duration-300 ${openSection === "onsite" ? "rotate-180 text-white" : "rotate-0"}`}
               >
                 {openSection === "onsite" ? "-" : "+"}
               </span>
@@ -369,8 +370,8 @@ const Education = () => {
                   </div>
                 )}
                 {onsiteCertificates.map((cert, index) => (
-                  <div key={index} className="flex  flex-col gap-6">
-                    <div className="rounded-xl shadow-md hover:scale-y-105 hover:shadow-lg transition-all duration-300 transform  border border-gray-100">
+                  <div key={index} className="flex flex-col gap-6">
+                    <div className="rounded-xl shadow-md hover:scale-y-105 hover:shadow-lg transition-all duration-300 transform border border-gray-100">
                       <div className="p-6">
                         <div className="flex items-center justify-between mb-4">
                           <div className="bg-white p-2 rounded-lg">
@@ -383,7 +384,7 @@ const Education = () => {
                             />
                           </div>
                           <div className="flex flex-col items-end">
-                            <span className="text-sm  bg-gray-100 px-2 py-1 rounded-md text-black">
+                            <span className="text-sm bg-gray-100 px-2 py-1 rounded-md text-black">
                               {cert.date}
                             </span>
                             <span className="text-xs px-2 py-1 rounded bg-primary text-white mt-3">
@@ -391,7 +392,7 @@ const Education = () => {
                             </span>
                           </div>
                         </div>
-                        <h4 className="text-lg font-semibold  mb-2  transition-colors duration-200">
+                        <h4 className="text-lg font-semibold mb-2 transition-colors duration-200">
                           {cert.name}
                         </h4>
                         <p className="font-medium mb-3">{cert.issuer}</p>
@@ -443,14 +444,14 @@ const Education = () => {
           {/* Remote Courses Accordion */}
           <div className="border my-4 shadow-md border-gray-200">
             <button
-              className={`w-full flex justify-between items-center py-4 px-6 text-left text-2xl font-semibold transition-colors duration-300 ${openSection === "remote" ? "bg-primary text-white" : "bg-white text-gray-800 hover:bg-gray-100"}`}
+              className={`sm:text-lg w-full flex justify-between items-center py-4 px-6 text-left text-2xl font-semibold transition-colors duration-300 ${openSection === "remote" ? "bg-primary text-white" : "bg-white text-gray-800 hover:bg-gray-100"}`}
               onClick={() =>
                 setOpenSection(openSection === "remote" ? null : "remote")
               }
             >
               {t("certificate")}
               <span
-                className={`transition-transform duration-300 ${openSection === "remote" ? "rotate-180  text-white" : "rotate-0"}`}
+                className={`transition-transform duration-300 ${openSection === "remote" ? "rotate-180 text-white" : "rotate-0"}`}
               >
                 {openSection === "remote" ? "-" : "+"}
               </span>
@@ -540,10 +541,10 @@ const Education = () => {
       </div>
 
       {/* View All Button */}
-      <div className="text-center py-8">
+      <div className="text-center py-6">
         <button
           onClick={openCarousel}
-          className="group relative inline-flex items-center justify-center px-8 py-4 text-xl font-semibold text-white transition-all duration-500 ease-in-out bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 rounded-xl hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 overflow-hidden"
+          className="group 0 border border-gray-300 relative inline-flex items-center justify-center  md:p-4 sm:p-2 sm:text-sm text-xl font-semibold text-white transition-all duration-500 ease-in-out bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 rounded-xl hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 overflow-hidden"
         >
           {/* Animated background overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
@@ -668,7 +669,7 @@ const Education = () => {
       )}
 
      
-    </>
+    </div>
   );
 };
 
