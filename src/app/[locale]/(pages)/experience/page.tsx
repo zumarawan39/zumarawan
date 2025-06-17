@@ -148,9 +148,9 @@ const Experience = () => {
                 ) : (
                   <div className="
                     flex items-start sm:flex-col gap-4 border-gray-200 border-2 rounded-md px-4 lg:py-16 sm:py-8 shadow-lg 
-                    bg-white/50 backdrop-blur-sm
+                    backdrop-blur-sm
                     transition-all duration-300 ease-in-out
-                    hover:shadow-2xl hover:border-green-400 hover:bg-white/70
+                    hover:shadow-2xl hover:border-green-400 hover:bg-white/20
                     transform hover:scale-105 hover:-translate-y-1
                   ">
                    <div 

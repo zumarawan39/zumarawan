@@ -355,7 +355,7 @@ const Education = () => {
             >
               {t("onsiteCourses")}
               <span
-                className={`transition-transform duration-300 ${openSection === "onsite" ? "rotate-180 text-white" : "rotate-0"}`}
+                className={`transition-transform duration-300 text-black ${openSection === "onsite" ? "rotate-180 text-white" : "rotate-0"}`}
               >
                 {openSection === "onsite" ? "-" : "+"}
               </span>
@@ -451,7 +451,7 @@ const Education = () => {
             >
               {t("certificate")}
               <span
-                className={`transition-transform duration-300 ${openSection === "remote" ? "rotate-180 text-white" : "rotate-0"}`}
+                className={`transition-transform duration-300 text-black ${openSection === "remote" ? "rotate-180 text-white" : "rotate-0"}`}
               >
                 {openSection === "remote" ? "-" : "+"}
               </span>
@@ -602,7 +602,7 @@ const Education = () => {
           <ModalFooter>
             <button
               onClick={() => setIsCarouselOpen(false)}
-              className="px-6 py-2 border-primary border text-gray-700 rounded-lg hover:text-white hover:bg-primary transition-colors duration-200"
+              className="px-6 py-2 text-primary border-primary border text-gray-700 rounded-lg hover:text-white hover:bg-primary transition-colors duration-200"
             >
               {t("close")}
             </button>
@@ -640,7 +640,7 @@ const Education = () => {
           <ModalFooter>
             <button
               onClick={closeModal}
-              className="px-6 py-2 border-primary border text-gray-700 rounded-lg hover:text-white hover:bg-primary transition-colors duration-200 "
+              className="px-6 py-2 text-primary border-primary border text-gray-700 rounded-lg hover:text-white hover:bg-primary transition-colors duration-200 "
             >
               {t("close")}
             </button>
