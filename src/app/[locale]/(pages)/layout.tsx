@@ -54,7 +54,7 @@ export default function Layout(props: {
               </SocialIconWrapper>
             </Link>
             <Link
-              href="https://twitter.com/iamhurera"
+              href="https://twitter.com/zumar_awan"
               passHref={true}
               target="_blank"
             >

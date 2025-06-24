@@ -183,6 +183,34 @@
           ]
         }
       ]
+    },
+    "Projects": {
+      "title": "Featured Work",
+      "subtitle": "Showcasing innovation through client and company projects built with modern technologies.",
+      "BestConnectClient": {
+        "title": "Best Connect Client App",
+        "role": "Front End Developer"
+      },
+      "BestConnectAdmin": {
+        "title": "Best Connect Admin App",
+        "role": "Front End Developer"
+      },
+      "WeSparkle": {
+        "title": "We Sparkle",
+        "role": "Front End Developer"
+      },
+      "MedConnect": {
+        "title": "Med Connect",
+        "role": "Front End Developer"
+      },
+      "TelecomProjects": {
+        "title": "Telecom Projects 1+",
+        "role": "Front End Developer"
+      },
+      "Portfolio": {
+        "title": "Portfolio Website",
+        "role": "Front End Developer"
+      }
     }
   }
 }

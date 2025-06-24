@@ -1,4 +1,5 @@
 
+import AnimatedBackground from "@/components/AnimatedBackground";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/components/ScrolltoTop";
 import ThemeWrapper from "@/components/ThemeWrapper";
@@ -14,6 +15,7 @@ const AppLayout = async (props: {
     <>
       {/* <CustomCursor /> */}
       <Navbar/>
+      <AnimatedBackground />
       <div className="app-layout  mx-auto">
       <ThemeWrapper>{props.children}</ThemeWrapper>
       </div>
