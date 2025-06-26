@@ -12,7 +12,9 @@ import {
   PhoneSVG,
   LocationSVG
 } from '@/assets/svgs/socials-svg';
+
 import Button from '@/components/Button';
+import SocialIconWrapper from '@/components/SocialIconWrapper';
 
 const Contact = () => {
   const contactInfo = [
@@ -21,21 +23,24 @@ const Contact = () => {
       title: "Email",
       value: "zumarawan39@gmail.com",
       link: "mailto:zumarawan39@gmail.com",
-      description: "Send me an email anytime"
+      description: "Send me an email anytime",
+      // color: "#1976d2" // blue for email
     },
     {
       icon: <PhoneSVG />,
       title: "Phone",
       value: "+92 300 1234567",
       link: "tel:+923001234567",
-      description: "Call me during business hours"
+      description: "Call me during business hours",
+      // color: "#43a047" // green for phone
     },
     {
       icon: <LocationSVG />,
       title: "Location",
       value: "Lahore, Pakistan",
       link: "#",
-      description: "Available for remote work worldwide"
+      description: "Available for remote work worldwide",
+      // color: "#fbc02d" // yellow for location
     }
   ];
 
@@ -45,6 +50,7 @@ const Contact = () => {
       icon: <GithubSVG />,
       url: "https://github.com/zumarawan39",
       color: "hover:bg-gray-900",
+      bgcolor: "#181717", // GitHub official color
       description: "Check out my code and projects"
     },
     {
@@ -52,6 +58,7 @@ const Contact = () => {
       icon: <LinkedInSVG />,
       url: "https://www.linkedin.com/in/zumar-awan/",
       color: "hover:bg-blue-600",
+      bgcolor: "#0077B5", // LinkedIn official color
       description: "Connect with me professionally"
     },
     {
@@ -59,6 +66,7 @@ const Contact = () => {
       icon: <InstagramSVG />,
       url: "https://www.instagram.com/zumar_awan_g/",
       color: "hover:bg-pink-600",
+      bgcolor: "#E1306C", // Instagram official color
       description: "Follow my daily updates"
     },
     {
@@ -66,6 +74,7 @@ const Contact = () => {
       icon: <TwitterSVG />,
       url: "https://twitter.com/zumar_awan",
       color: "hover:bg-blue-400",
+      bgcolor: "#1DA1F2", // Twitter official color
       description: "Tech thoughts and insights"
     },
     {
@@ -73,9 +82,11 @@ const Contact = () => {
       icon: <FacebookSVG />,
       url: "https://www.facebook.com/zumar.awan.54",
       color: "hover:bg-blue-700",
+      bgcolor: "#1877F3", // Facebook official color
       description: "Personal updates and networking"
     }
   ];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-20 px-4 sm:px-6 lg:px-8">
@@ -87,10 +98,10 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Get In <span className="text-blue-600 dark:text-blue-400">Touch</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Get In <span className="text-primary">Touch</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl  max-w-3xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and development.
           </p>
         </motion.div>
@@ -104,10 +115,10 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl font-bold mb-6">
                 Let's Connect
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-lg  mb-8">
                 Whether you have a project in mind, want to collaborate, or just want to say hello, I'd love to hear from you. 
                 Feel free to reach out through any of the channels below.
               </p>
@@ -124,13 +135,13 @@ const Contact = () => {
                   className="bg-white  rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                      <div className="w-6 h-6 text-blue-600 dark:text-blue-400">
+                    <div className="">
+                      <SocialIconWrapper bgcolor={info.color}>
                         {info.icon}
+                        </SocialIconWrapper>
                       </div>
-                    </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                      <h3 className="text-lg font-semibold mb-1">
                         {info.title}
                       </h3>
                       <a
@@ -157,10 +168,10 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl font-bold mb-6">
                 Follow Me
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-lg mb-8">
                 Connect with me on social media to stay updated with my latest projects, tech insights, and professional journey.
               </p>
             </div>
@@ -176,19 +187,19 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className=" rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
                   <div className="flex items-center space-x-4">
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${social.color} bg-gray-100 dark:bg-gray-700`}>
-                      <div className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-white transition-colors duration-300">
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${social.color} `}>
+                      <SocialIconWrapper bgcolor={social.bgcolor}>
                         {social.icon}
-                      </div>
+                      </SocialIconWrapper>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                      <h3 className="text-lg font-semibold   transition-colors duration-300">
                         {social.name}
                       </h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                      <p className="text-sm ">
                         {social.description}
                       </p>
                     </div>

@@ -231,7 +231,7 @@ const Education = () => {
               alt="svg"
               width={500}
               height={500}
-              className="svg-image  sm:w-40 object-cover sm:h-40"
+              className="svg-image  sm:w-44 object-cover sm:h-44"
             />
           </div>
         </Slide>

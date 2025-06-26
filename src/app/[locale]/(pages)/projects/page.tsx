@@ -16,13 +16,13 @@ const Projects = () => {
       id: 1,
       key: "BestConnectClient",
       image: "/assets/images/bectconnect_client.png",
-      liveUrl: "https://bestconnect.online.com",
+      liveUrl: "https://bestconnect.online",
     },
     {
       id: 2,
       key: "BestConnectAdmin",
       image: "/assets/images/bestconnect_admin.png",
-      liveUrl: "https://bestconnect.online.com",
+      liveUrl: "https://admin.bestconnect.online",
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 ">
+    <div className="min-h-screen md:py-20 px-4 sm:px-6 sm:py-5">
       <div className=" mx-auto">
         {/* Header Section */}
         <motion.div
@@ -61,7 +61,7 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-blue-600 dark:text-blue-400">
+            <span>
               {t("title")}
             </span>
           </h1>
@@ -71,7 +71,7 @@ const Projects = () => {
         </motion.div>
 
         <AnimatePresence>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-5">
             {projects.map((project, idx) => (
               <motion.div
                 key={project.id}
@@ -80,14 +80,14 @@ const Projects = () => {
                 exit={{ opacity: 0, y: 60 }}
                 transition={{ duration: 0.7, delay: idx * 0.18, type: 'spring', stiffness: 70 }}
                 whileHover={{ scale: 1.03, boxShadow: '0 8px 32px rgba(0,0,0,0.13)' }}
-                className="relative rounded-2xl overflow-hidden group shadow-xl cursor-pointer flex flex-col justify-end min-h-[380px]"
+                className="relative rounded-2xl overflow-hidden group shadow-xl cursor-pointer flex flex-col justify-end md:min-h-[380px]"
               >
                 <Image
                   src={project.image}
                   alt={t(`${project.key}.title`)}
                   width={800}
                   height={400}
-                  className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-50"
+                  className="w-full h-96 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-50"
                 />
                 <Link
                   href={project.liveUrl}
@@ -126,10 +126,10 @@ const Projects = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
-                  className="absolute bottom-0 left-0 w-full bg-primary my-4 px-6 py-4 text-white"
+                  className="absolute bottom-0 left-0 w-full bg-primary my-4 md:px-6 md:py-4 sm:text-sm sm:px-4 sm:py-2 text-white"
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="md:text-lg font-semibold text-white">
                       {t(`${project.key}.title`)}
                     </h3>
                     <h3 className=" text-white">{t(`${project.key}.role`)}</h3>
