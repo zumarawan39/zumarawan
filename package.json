@@ -19,9 +19,9 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@iconify/react": "^5.2.1",
     "@mui/material": "^6.4.2",
-    "@prismicio/client": "^7.15.1",
-    "@prismicio/next": "^2.0.0",
-    "@prismicio/react": "^3.0.0",
+    "@prismicio/client": "^7.18.0",
+    "@prismicio/next": "^2.0.1",
+    "@prismicio/react": "^3.2.1",
     "@reduxjs/toolkit": "^2.5.1",
     "lucide-react": "^0.492.0",
     "motion": "^12.6.5",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@slicemachine/adapter-next": "^0.3.66",
+    "@slicemachine/adapter-next": "^0.3.79",
     "@storybook/nextjs": "^8.5.3",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -53,7 +53,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
-    "slice-machine-ui": "^2.12.3",
+    "slice-machine-ui": "^2.17.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

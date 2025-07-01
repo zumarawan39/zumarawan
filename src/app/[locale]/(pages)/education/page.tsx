@@ -160,7 +160,6 @@ const Education = () => {
   };
 
   const nextSlide = () => {
-    console.log("Next slide clicked, current slide:", currentSlide);
     setCurrentSlide((prev) => (prev + 1) % certificates.length);
   };
 
@@ -175,11 +174,7 @@ const Education = () => {
     return () => clearInterval(interval);
   }, [isCarouselOpen, isAutoPlaying, currentSlide]);
 
-  
-  // Log all certificate image paths
-  certificates.forEach((cert, index) => {
-    console.log(`Certificate ${index}: ${cert.name} - Image: ${cert.certificate}`);
-  });
+
 
   // Render certificate image for carousel
   const renderCertificateImage = (cert: Certificate, index: number) => (

@@ -1,0 +1,108 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"seebiz": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"logo",
+								{
+									"__TYPE__": "ImageContent",
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+										"width": 4380,
+										"height": 2895
+									},
+									"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+									"width": 4380,
+									"height": 2895,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "clean",
+									"thumbnails": {}
+								}
+							],
+							[
+								"role",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Laborum sint do labore tempor consectetur aliquip ullamco ex velit nisi. Reprehenderit nulla ex aliquip laborum elit sit enim nostrud eu proident nulla."
+											}
+										}
+									]
+								}
+							],
+							[
+								"company_name",
+								{
+									"key": "7be937dc-49ae-4f11-ae45-93a63fc7a5d6",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "hole"
+									}
+								}
+							],
+							[
+								"date_to",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Date",
+									"value": "2016-06-08"
+								}
+							],
+							[
+								"data_from",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Date",
+									"value": "2015-02-06"
+								}
+							],
+							[
+								"mode",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "properly",
+									"type": "Text"
+								}
+							],
+							[
+								"duties",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Mollit sint laboris deserunt laboris id laborum deserunt et culpa. Dolor esse dolor ut veniam tempor laborum duis laborum proident magna nostrud cupidatat Lorem enim."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -3,6 +3,13 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./src/libs/i18n.ts');
  
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  images: {
+    domains: [
+      "images.prismic.io",
+      // agar aur bhi domains hain toh yahan add karen
+    ],
+  },
+};
 
 export default withNextIntl(nextConfig);

@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store';
 
 
-import { usePathname } from '@/libs/i18nNavigation';
+import { usePathname, useRouter } from '@/libs/i18nNavigation';
 import { useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
+
 import { motion } from 'motion/react';
 
 import intailLogo from "../../../public/assets/images/intail-logo.png";
@@ -41,10 +41,14 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = () => {
 
   useEffect(() => {
     const cLanguage = languages.find((lang: any) => lang.id === locale);
+  
     if (cLanguage) {
       dispatch(setLocale(cLanguage));
+    } else {
+      console.warn("No matching language found for locale:", locale);
     }
   }, [languages, locale, dispatch]);
+  
 
   //   // Handle outside clicks
   useEffect(() => {

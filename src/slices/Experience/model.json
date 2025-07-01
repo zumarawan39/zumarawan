@@ -1,0 +1,89 @@
+{
+  "id": "experience",
+  "type": "SharedSlice",
+  "name": "Experience",
+  "description": "Experience",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Seebiz",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "seebiz": {
+          "type": "Group",
+          "config": {
+            "label": "Seebiz",
+            "repeat": true,
+            "fields": {
+              "logo": {
+                "type": "Image",
+                "config": {
+                  "label": "logo",
+                  "constraint": {
+                    "width": null,
+                    "height": null
+                  },
+                  "thumbnails": []
+                }
+              },
+              "role": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Role",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "company_name": {
+                "type": "Link",
+                "config": {
+                  "label": "company name",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
+              "date_to": {
+                "type": "Date",
+                "config": {
+                  "label": "date_to",
+                  "placeholder": ""
+                }
+              },
+              "data_from": {
+                "type": "Date",
+                "config": {
+                  "label": "data_from",
+                  "placeholder": ""
+                }
+              },
+              "mode": {
+                "type": "Text",
+                "config": {
+                  "label": "mode",
+                  "placeholder": ""
+                }
+              },
+              "duties": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "duties",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,o-list-item,rtl,list-item"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

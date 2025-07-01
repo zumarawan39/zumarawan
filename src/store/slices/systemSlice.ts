@@ -15,6 +15,12 @@ const initialState = {
       short: 'UR',
       iconPath: '/assets/flags/pak.svg',
     },
+    {
+      id: 'tr',
+      name: 'Turkish',
+      short: 'TUR',
+      iconPath: '/assets/flags/tr.svg',
+    },
   ],
 };
 

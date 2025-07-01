@@ -5,6 +5,8 @@ import storage from "redux-persist/lib/storage";
 import themeReducer from "./slices/themeSlice";
 import localSliceReducer from "./slices/localSlice";
 import systemSliceReducer from "./slices/systemSlice";
+import { version } from "os";
+
 
 // Combine all reducers
 const rootReducer: any = combineReducers({
@@ -16,6 +18,7 @@ const rootReducer: any = combineReducers({
 // Persist configuration with encryption
 const persistConfig = {
     key: "root",
+    version:3,
     storage,
     whitelist: ["theme","locale","systemConfig"], // List of reducers to persist
     transforms: [
