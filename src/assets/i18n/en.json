@@ -211,6 +211,23 @@
         "title": "Portfolio Website",
         "role": "Front End Developer"
       }
+    },
+    "Contact": {
+      "title": "Contact Me",
+      "subtitle": "Get in touch with me",
+      "description": "Have a question, project idea, or collaboration offer? Fill out the form below or reach out directly via email. I'll get back to you as soon as possible!",
+      "form": {
+        "name": "Your Name",
+        "email": "Your Email Address",
+        "message": "Your Message",
+        "send": "Send",
+        "sending": "Sending...",
+        "success": "Your message has been sent successfully!",
+        "error": "An error occurred. Please try again."
+      },
+      "reachout": "You can also reach me through my social media accounts below:",
+      "email": "Email",
+      "phone": "Phone"
     }
   }
 }

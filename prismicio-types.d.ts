@@ -175,7 +175,44 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = ExperienceDocument | PageDocument;
+type ProjectsDocumentDataSlicesSlice = ProjectsSlice;
+
+/**
+ * Content for Projects documents
+ */
+interface ProjectsDocumentData {
+  /**
+   * Slice Zone field in *Projects*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<ProjectsDocumentDataSlicesSlice>;
+}
+
+/**
+ * Projects document from Prismic
+ *
+ * - **API ID**: `projects`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ProjectsDocumentData>,
+    "projects",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | ExperienceDocument
+  | PageDocument
+  | ProjectsDocument;
 
 /**
  * Item in *Experience → Seebiz → Primary → Seebiz*
@@ -303,6 +340,104 @@ export type ExperienceSlice = prismic.SharedSlice<
   ExperienceSliceVariation
 >;
 
+/**
+ * Item in *Projects → Default → Primary → projects*
+ */
+export interface ProjectsSliceDefaultPrimaryProjectsItem {
+  /**
+   * Project Image field in *Projects → Default → Primary → projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.projects[].project_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  project_image: prismic.ImageField<never>;
+
+  /**
+   * Project Name field in *Projects → Default → Primary → projects*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.projects[].project_name
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  project_name: prismic.RichTextField;
+
+  /**
+   * Project Role field in *Projects → Default → Primary → projects*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.projects[].project_role
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  project_role: prismic.RichTextField;
+
+  /**
+   * Project Link field in *Projects → Default → Primary → projects*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.projects[].project_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  project_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Primary content in *Projects → Default → Primary*
+ */
+export interface ProjectsSliceDefaultPrimary {
+  /**
+   * projects field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.projects[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  projects: prismic.GroupField<
+    Simplify<ProjectsSliceDefaultPrimaryProjectsItem>
+  >;
+}
+
+/**
+ * Default variation for Projects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProjectsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Projects*
+ */
+type ProjectsSliceVariation = ProjectsSliceDefault;
+
+/**
+ * Projects Shared Slice
+ *
+ * - **API ID**: `projects`
+ * - **Description**: Projects
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProjectsSlice = prismic.SharedSlice<
+  "projects",
+  ProjectsSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -330,12 +465,20 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      ProjectsDocument,
+      ProjectsDocumentData,
+      ProjectsDocumentDataSlicesSlice,
       AllDocumentTypes,
       ExperienceSlice,
       ExperienceSliceDefaultPrimarySeebizItem,
       ExperienceSliceDefaultPrimary,
       ExperienceSliceVariation,
       ExperienceSliceDefault,
+      ProjectsSlice,
+      ProjectsSliceDefaultPrimaryProjectsItem,
+      ProjectsSliceDefaultPrimary,
+      ProjectsSliceVariation,
+      ProjectsSliceDefault,
     };
   }
 }

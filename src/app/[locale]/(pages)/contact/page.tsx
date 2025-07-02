@@ -15,23 +15,25 @@ import {
 
 import Button from '@/components/Button';
 import SocialIconWrapper from '@/components/SocialIconWrapper';
+import { useTranslations } from 'next-intl';
 
 const Contact = () => {
+  const t = useTranslations('app.Contact');
   const contactInfo = [
     {
       icon: <EmailSVG size="30" color="#1976d2" />,
-      title: "Email",
+      title: t('email'),
       value: "zumarawan39@gmail.com",
       link: "mailto:zumarawan39@gmail.com",
-      description: "Send me an email anytime",
+      description: t('form.email'),
       bgColor: "bg-blue"
     },
     {
       icon: <PhoneSVG size="30" color="#43a047" />,
-      title: "Phone",
+      title: t('phone'),
       value: "+92 325 8255993",
       link: "tel:+923258255993",
-      description: "Call me during business hours",
+      description: t('form.name'),
       bgColor: "bg-green"
     },
     {
@@ -86,7 +88,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -95,10 +97,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Get In <span className="text-primary">Touch</span>
+            {t('title')}
           </h1>
           <p className="text-xl  max-w-3xl mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and development.
+            {t('description')}
           </p>
         </motion.div>
 
@@ -112,11 +114,10 @@ const Contact = () => {
           >
             <div>
               <h2 className="text-3xl font-bold mb-6">
-                Let's Connect
+                {t('subtitle')}
               </h2>
               <p className="text-lg  mb-8">
-                Whether you have a project in mind, want to collaborate, or just want to say hello, I'd love to hear from you. 
-                Feel free to reach out through any of the channels below.
+                {t('reachout')}
               </p>
             </div>
 
@@ -164,11 +165,8 @@ const Contact = () => {
           >
             <div>
               <h2 className="text-3xl font-bold mb-6">
-                Follow Me
+                {t('reachout')}
               </h2>
-              <p className="text-lg mb-8">
-                Connect with me on social media to stay updated with my latest projects, tech insights, and professional journey.
-              </p>
             </div>
 
             {/* Social Cards */}
@@ -186,7 +184,7 @@ const Contact = () => {
                 >
                   <div className="flex text-black sitems-center space-x-4">
                     {/* <div className={`w-16 h-16 rounded-lg flex items-center justify-center transition-all duration-300 ${social.color} `}> */}
-                      <SocialIconWrapper bgcolor={social.bgcolor}>
+                      <SocialIconWrapper bgcolor={social.bgColor}>
                         {social.icon}
                       </SocialIconWrapper>
                     {/* </div> */}
@@ -251,7 +249,7 @@ const Contact = () => {
           size="Large"
           to="mailto:zumarawan39@gmail.com"
           className="bg-white text-blue-600 hover:bg-gray-50 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
-          icon={<EmailSVG color="#1976d2" className="w-5 h-5 mr-2" />}
+          icon={<EmailSVG color="#1976d2" size="1em" />}
         >
           Send Email
         </Button>
@@ -261,10 +259,8 @@ const Contact = () => {
           type="SecondaryOutline"
           size="Large"
           to="https://github.com/zumarawan39"
-          target="_blank"
-          rel="noopener noreferrer"
           className="border-2 border-white text-white hover:bg-white hover:text-blue-600 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
-          icon={<GithubSVG color="currentColor" className="w-5 h-5 mr-2" />}
+          icon={<GithubSVG color="currentColor" size="1em" />}
         >
           View Projects
         </Button>

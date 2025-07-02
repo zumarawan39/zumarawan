@@ -211,6 +211,23 @@
         "title": "Portföy Web Sitesi",
         "role": "Ön Uç Geliştirici"
       }
+    },
+    "Contact": {
+      "title": "Benimle İletişime Geçin",
+      "subtitle": "Benimle iletişime geçin",
+      "description": "Herhangi bir sorunuz, proje fikriniz veya işbirliği teklifiniz mi var? Aşağıdaki formu doldurun veya doğrudan e-posta ile ulaşın. Size en kısa sürede geri döneceğim!",
+      "form": {
+        "name": "Adınız",
+        "email": "E-posta Adresiniz",
+        "message": "Mesajınız",
+        "send": "Gönder",
+        "sending": "Gönderiliyor...",
+        "success": "Mesajınız başarıyla gönderildi!",
+        "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+      },
+      "reachout": "Aşağıdaki sosyal medya hesaplarımdan da bana ulaşabilirsiniz:",
+      "email": "E-posta",
+      "phone": "Telefon"
     }
   }
 } 

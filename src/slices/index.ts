@@ -4,4 +4,5 @@ import dynamic from "next/dynamic";
 
 export const components = {
   experience: dynamic(() => import("./Experience")),
+  projects: dynamic(() => import("./Projects")),
 };
