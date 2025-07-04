@@ -227,7 +227,12 @@
       },
       "reachout": "Aşağıdaki sosyal medya hesaplarımdan da bana ulaşabilirsiniz:",
       "email": "E-posta",
-      "phone": "Telefon"
+      "phone": "Telefon",
+      "cta_title": "Bir Projeye Başlamaya Hazır mısınız?",
+      "cta_description": "Hadi iş birliği yapalım ve vizyonunuzu hayata geçirelim. Fikirden lansmana kadar size harika bir şey inşa etmenizde yardımcı olmaya hazırım.",
+      "cta_send_email": "E-posta Gönder",
+      "cta_view_projects": "Projeleri Görüntüle",
+      "cta_response_time": "Genellikle kısa sürede yanıt verilir"
     }
   }
 } 

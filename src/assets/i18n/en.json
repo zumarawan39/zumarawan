@@ -227,7 +227,12 @@
       },
       "reachout": "You can also reach me through my social media accounts below:",
       "email": "Email",
-      "phone": "Phone"
+      "phone": "Phone",
+      "cta_title": "Ready to Start a Project?",
+      "cta_description": "Let's collaborate and bring your vision to life. I'm here to help you build something amazing, from idea to launch.",
+      "cta_send_email": "Send Email",
+      "cta_view_projects": "View Projects",
+      "cta_response_time": "Typically respond within Few Time"
     }
   }
 }

@@ -1,0 +1,13 @@
+.responsive-box {
+   margin-top: 20px;
+  
+    @media (max-width: 640px) {
+     .responsive-box{
+        width: 50%;
+        
+     }
+     .cards{
+        margin-top: 40px;
+     }
+    }
+  }

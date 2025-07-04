@@ -7,6 +7,7 @@ import { Slide } from "react-awesome-reveal";
 import { ExperienceCardLoader } from "@/components/ExperienceCard";
 import { useTranslations } from "next-intl";
 import { PrismicNextImage } from "@prismicio/next";
+import Styles from "./experience.module.scss"
 
 /**
  * Props for `Experience`.
@@ -68,7 +69,7 @@ const Experience: FC<ExperienceProps> = ({ slice }) => {
   return (
     <div className="sm:px-4">
       {/* Header Section */}
-      <div className="grid grid-cols-2 sm:grid-cols-1 justify-between items-center w-full ">
+      <div className="grid grid-cols-2 sm:grid-cols-1 justify-between items-center w-full md:py-16 ">
         <Slide triggerOnce direction="left">
           <div className="flex flex-col items-center justify-center object-cover">
             <Image
@@ -81,7 +82,7 @@ const Experience: FC<ExperienceProps> = ({ slice }) => {
           </div>
         </Slide>
         <Slide triggerOnce direction="right">
-          <div className="sm:mb-2 md:mb-2 lg:mb-2 flex flex-col items-center justify-center pt-14 xl:pt-12 2xl:pt-0">
+          <div className=" md:mb-2 lg:mb-2 flex flex-col items-center justify-center pt-14 xl:pt-12 2xl:pt-0">
             <Slide triggerOnce direction="right">
               <div className="flex flex-col items-center justify-center content-center gap-4">
                 <h4 className="text-6xl sm:text-4xl font-semibold">
@@ -100,7 +101,7 @@ const Experience: FC<ExperienceProps> = ({ slice }) => {
       </div>
       
       {/* Cards Section - 2 columns with gaps and alternate alignment */}
-      <div className="w-full flex flex-col  mt-16">
+      <div className="w-full flex flex-col gap-5 mt-16 cards">
         {(loading ? Array(items.length || 3).fill({}) : items).map(
           (item: any, idx: number) => (
             <div
@@ -127,12 +128,13 @@ const Experience: FC<ExperienceProps> = ({ slice }) => {
               }}
             >
               <div
-                className={`
-                  ${getCardInnerStyle(idx)} 
+                className={`${Styles.responsiveBox}
+                  ${getCardInnerStyle(idx)}
                 `}
                 style={{
                   width:"50%",
-                  marginTop:"20px"
+                  padding:"10px"
+                  
                 }}
               >
                 {loading ? (

@@ -66,8 +66,8 @@
 							[
 								"project_link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "3fb61a81-8327-4d7c-a32a-684ad1050fa9",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "https://slicemachine.dev",

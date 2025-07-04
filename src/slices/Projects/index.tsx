@@ -42,20 +42,27 @@ const t = useTranslations("app.Projects");
           </p>
         </motion.div>
       <AnimatePresence>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-5">
+        <div className="grid !grid-cols-2 lg:grid-cols-2 " style={{
+          gap:"20px"
+        }}>
           {projects.map((item: any, idx: number) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 60 }}
-              transition={{ duration: 0.7, delay: idx * 0.18, type: 'spring', stiffness: 70 }}
-              whileHover={{ scale: 1.03, boxShadow: '0 8px 32px rgba(0,0,0,0.13)' }}
-              className="relative rounded-2xl overflow-hidden group shadow-xl cursor-pointer flex flex-col justify-end md:min-h-[380px]"
-            >
+          <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{
+            type: 'spring',
+            stiffness: 250,      // much faster
+            damping: 25,         // less bouncy
+            delay: idx * 0.02    // much shorter stagger
+          }}
+          whileHover={{ scale: 1.03, boxShadow: '0 8px 32px rgba(0,0,0,0.13)' }}
+          className="relative  rounded-xl overflow-hidden group shadow-xl cursor-pointer md:min-h-[380px] flex items-center content-center justify-center "
+        >
               <PrismicNextImage
                 field={item.project_image}
-                className="w-full h-96 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-50"
+                className="w-full h-96 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-50"
               />
               {item.project_link?.url && (
                 <PrismicNextLink
@@ -68,11 +75,11 @@ const t = useTranslations("app.Projects");
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="bg-black bg-opacity-0 group-hover:bg-opacity-40 w-full h-full flex items-center justify-center transition-all duration-300"
-                    style={{ position: 'absolute', inset: 0 }}
+                    className=" bg-black bg-opacity-65 group-hover:bg-black-opacity-6 w-full h-full flex items-center justify-center transition-all duration-300 "
+                    style={{ position: 'absolute', inset: 0}}
                   >
                     <div
-                      className="opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-75 transition-all duration-300 ease-in-out bg-white text-black w-12 h-12 rounded-full flex items-center justify-center shadow-md"
+                      className="opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-75 transition-all duration-300 ease-in-out bg-primary text-white w-12 h-12  sm:text-sm  rounded-full flex items-center justify-center shadow-md"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -93,18 +100,25 @@ const t = useTranslations("app.Projects");
                 </PrismicNextLink>
               )}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 1 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
-                className="absolute bottom-0 left-0 w-full bg-primary my-4 md:px-6 md:py-4 sm:text-sm sm:px-4 sm:py-2 text-white"
+                className="absolute bottom-0 w-4/5 sm:w-full px-4 !mx-auto bg-primary my-4  sm:text-sm sm:px-2 sm:py-2"
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="md:text-lg font-semibold text-white">
+                  <h2 className="md:text-lg font-semibold sm:text-nowrap"  style={{
+                    color:"white",
+                    padding:"10px",
+                      whiteSpace: "nowrap"
+                  }}>
                     <PrismicRichText field={item.project_name} />
-                  </h3>
-                  <h3 className="text-white">
-                    <PrismicRichText field={item.project_role} />
-                  </h3>
+                  </h2>
+                  <h2  style={{
+                    color:"white",
+                   whiteSpace: "nowrap"
+                  }}>
+                    <PrismicRichText field={item.project_role}  />
+                  </h2>
                 </div>
               </motion.div>
             </motion.div>
