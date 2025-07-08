@@ -1,0 +1,14 @@
+@forward 'modal';
+@forward 'scrollbar';
+@forward 'datepicker';
+@forward 'search';
+
+.action-4x {
+  width: 350px;
+}
+
+.pagination-container {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+}

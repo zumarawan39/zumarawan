@@ -1,0 +1,17 @@
+@use './variable' as variable;
+
+@mixin transition {
+  transition: 0.3s all ease-in-out;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mobile() {
+  @media (max-width: variable.$breakpoint-sm) {
+    @content;
+  }
+}

@@ -1,0 +1,23 @@
+.search-filter {
+  width: 224px;
+  left: 0px;
+  top: 0px;
+  background-color: transparent;
+  border: 1px solid #d2d2d2;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #1f1f1f;
+
+  // &:outline {
+  //   border-color: #cacaca !important;
+  // }
+
+  &:focus-visible,
+  &:active,
+  &:target,
+  &:focus {
+    border-color: #cacaca !important;
+    outline: #cacaca;
+  }
+}
