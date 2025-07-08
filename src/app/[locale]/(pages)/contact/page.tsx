@@ -241,21 +241,21 @@ const Contact = () => {
         {t("cta_description")}
       </p>
 
-      <div className="flex  sm:flex-col gap-4 justify-center">
+      <div className="flex  sm:flex-col gap-4 justify-center hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
         <Button
           type="PrimaryOutline"
-          to="mailto:zumarawan39@gmail.com"
-          className="bg-white text-blue-700 font-semibold hover:bg-blue-50 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-white/0 hover:border-blue-200"
+          className=""
           icon={<EmailSVG color="#1976d2" size="1em" />}
+          onClick={() => window.open("mailto:zumarawan39@gmail.com", "_blank")}
         >
           {t("cta_send_email")}
         </Button>
 
         <Button
           type="SecondaryOutline"
-          to="https://github.com/zumarawan39"
-          className="border-2 border-white text-white font-semibold hover:bg-white hover:text-blue-700 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+          className="font-semibold hover:bg-white hover:text-blue-700 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
           icon={<GithubSVG color="currentColor" size="1em" />}
+          onClick={()=>window.open("https://github.com/zumarawan39","_blank")}
         >
           {t("cta_view_projects")}
         </Button>

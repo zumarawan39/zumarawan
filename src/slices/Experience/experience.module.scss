@@ -1,13 +1,13 @@
-.responsive-box {
+.responsiveBox {
    margin-top: 20px;
-  
-    @media (max-width: 640px) {
-     .responsive-box{
-        width: 50%;
-        
-     }
-     .cards{
-        margin-top: 40px;
-     }
-    }
-  }
+ 
+   @media (max-width: 640px) {
+     width: 100% !important;
+   }
+ }
+ 
+ .cards {
+   @media (max-width: 640px) {
+     margin-top: 40px;
+   }
+ }
