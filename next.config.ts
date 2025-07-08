@@ -1,23 +1,39 @@
-// import {NextConfig} from 'next';
+// // import {NextConfig} from 'next';
+// // import createNextIntlPlugin from 'next-intl/plugin';
+
+// // const withNextIntl = createNextIntlPlugin('./src/libs/i18n.ts');
+ 
+// // const nextConfig: NextConfig = {
+// //   // output:"export",
+// //   images: {
+// //     domains: [
+// //       "images.prismic.io",
+// //     ],
+// //   },
+// // };
+
+// // export default withNextIntl(nextConfig);
+
+// import { NextConfig } from 'next';
 // import createNextIntlPlugin from 'next-intl/plugin';
 
 // const withNextIntl = createNextIntlPlugin('./src/libs/i18n.ts');
- 
-// const nextConfig: NextConfig = {
 
+// const isProd = process.env.NODE_ENV === 'production';
+
+// const nextConfig: NextConfig = {
+//   output: 'export',
+//   basePath: isProd ? '/NextjsPortfolio' : '',
+//   assetPrefix: isProd ? '/NextjsPortfolio/' : '',
+//   eslint: {
+//     ignoreDuringBuilds: true, // ✅ disables lint check in build
+//   },
 //   images: {
-//     domains: [
-//       "images.prismic.io",
-//       // agar aur bhi domains hain toh yahan add karen
-//     ],
+//     domains: ['images.prismic.io'],
 //   },
 // };
 
 // export default withNextIntl(nextConfig);
-
-
-// =======================================================================
-// next.config.ts
 
 import { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
@@ -29,14 +45,12 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig: NextConfig = {
   output: 'export',
   basePath: isProd ? '/NextjsPortfolio' : '',
+  assetPrefix: isProd ? '/NextjsPortfolio/' : '',
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // ✅ disables lint check in build
   },
   images: {
     domains: ['images.prismic.io'],
-  },
-  typescript: {
-    ignoreBuildErrors: true,
   },
 };
 
