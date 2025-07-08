@@ -2,7 +2,8 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-"homepage": "https://zumarawan39.github.io/zumarawan-pages",
+"homepage": "https://zumarawan39.github.io/zumarawan/home",
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
