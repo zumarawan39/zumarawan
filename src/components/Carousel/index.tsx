@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { Slide } from "react-awesome-reveal";
 
-interface CarouselProps {
-  items: any[];
-  renderItem: (item: any, index: number) => React.ReactNode;
+interface CarouselProps<T> {
+  items: T[];
+  renderItem: (item: T, index: number) => React.ReactNode;
   autoPlay?: boolean;
   autoPlayInterval?: number;
   showDots?: boolean;
@@ -12,7 +12,7 @@ interface CarouselProps {
   className?: string;
 }
 
-const Carousel: React.FC<CarouselProps> = ({
+function Carousel<T>({
   items,
   renderItem,
   autoPlay = true,
@@ -20,7 +20,7 @@ const Carousel: React.FC<CarouselProps> = ({
   showDots = true,
   showArrows = true,
   className = "",
-}) => {
+}: CarouselProps<T>) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(autoPlay);
 
@@ -164,6 +164,6 @@ const Carousel: React.FC<CarouselProps> = ({
       </div>
     </div>
   );
-};
+}
 
 export default Carousel; 

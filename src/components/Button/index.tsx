@@ -28,11 +28,11 @@ interface ButtonProps {
   children?: ReactNode;
   loading?: boolean;
   disabled?: boolean;
-  textColor?: any;
+  textColor?: string;
   icon?: ReactNode | null;
   to?: string;
   isAnimate?: boolean;
-  onClick?: (e?: any) => void;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
 }
 
 const Button: FC<ButtonProps> = ({

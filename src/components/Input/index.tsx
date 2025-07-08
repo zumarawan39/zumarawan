@@ -40,7 +40,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   const [isPhoneNumberValid, setIsPhoneNumberValid] = React.useState(false);
   const [isPhoneNumberTouched, setIsPhoneNumberTouched] = React.useState(false);
-  const validateMobileNumber = (number: any, countryCode: any) => {
+  const validateMobileNumber = (number: string, countryCode: string) => {
     try {
       const phoneNumber = parsePhoneNumber(number, countryCode.toUpperCase());
       if (!phoneNumber || !phoneNumber?.isValid() || phoneNumber.getType() !== 'MOBILE') {
@@ -115,7 +115,7 @@ const Input: React.FC<InputProps> = ({
                   onClick={() => setIsPhoneNumberTouched(true)}
                   // onChange={(value) => field.onChange(value)} // Ensure it updates form state
                   // onBlur={() => { field.onBlur(); }} // Ensures validation runs on blur
-                  isValid={(value, country: any) => {
+                  isValid={(value: string, country: { iso2: string }) => {
                     const is_valid = validateMobileNumber(value, country.iso2);
 
                     setTimeout(() => {

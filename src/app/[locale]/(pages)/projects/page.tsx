@@ -1,11 +1,4 @@
 
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { GithubSVG, ExternalLinkSVG } from "@/assets/svgs/socials-svg";
-import Button from "@/components/Button";
-import Link from "next/link";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
 import { createClient } from "@/prismicio";
 import { SliceZone } from "@prismicio/react";
 import { components } from "@/slices";

@@ -1,5 +1,7 @@
-import React, { ReactNode } from 'react';
+import * as React from 'react';
+import { ReactNode } from 'react';
 import classes from './flex.module.scss';
+import { JSX } from 'react';
 
 /**
  * Flex Box
@@ -53,9 +55,9 @@ import classes from './flex.module.scss';
 
 interface FlexProps {
   children: ReactNode;
-  as?: any;
+  as?: keyof JSX.IntrinsicElements;
   className?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 const Flex: React.FC<FlexProps> = ({

@@ -14,9 +14,8 @@ import WhatIDo from "@/components/WhatIdo";
 
 const Home = () => {
   const t = useTranslations("app.Home");
-  const theme = useSelector((state: RootState) => state?.theme?.mode);
   const ref = useRef(null);
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const scrollToNextSection = () => {

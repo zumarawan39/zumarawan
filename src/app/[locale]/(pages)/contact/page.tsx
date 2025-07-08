@@ -207,8 +207,8 @@ const Contact = () => {
                 </h3>
               </div>
               <p className="text-white">
-                I'm currently open to new projects, collaborations, and exciting
-                opportunities. Let's discuss how we can work together!
+                I&apos;m currently open to new projects, collaborations, and exciting
+                opportunities. Let&apos;s discuss how we can work together!
               </p>
             </motion.div>
           </motion.div>

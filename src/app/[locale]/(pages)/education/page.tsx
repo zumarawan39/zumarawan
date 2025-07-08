@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState, useRef, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Slide } from "react-awesome-reveal";
 import { useTranslations } from "next-intl";
 import EducationPageSVG from "../../../../../public/assets/images/degree.png";
@@ -9,7 +9,6 @@ import ModalHeader from "@/components/Modal/Header";
 import ModalBody from "@/components/Modal/Body";
 import ModalFooter from "@/components/Modal/Footer";
 import Carousel from "@/components/Carousel";
-import Link from "next/link";
 
 interface Education {
   degree: string;
@@ -35,13 +34,12 @@ interface Certificate {
 const Education = () => {
   const t = useTranslations("app.Education");
   const [openSection, setOpenSection] = useState<string | null>("");
-  const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCertificate, setSelectedCertificate] =
     useState<Certificate | null>(null);
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  // const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   // Get education from translations using useMemo
   const education: Education[] = useMemo(() => [
@@ -139,10 +137,10 @@ const Education = () => {
     (cert) => cert.mode === "onsite"
   ), [certificates]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   // const timer = setTimeout(() => setLoading(false), 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   // Handle certificate modal
   const handleViewCertificate = (certificate: Certificate) => {
@@ -165,19 +163,19 @@ const Education = () => {
 
   // Auto-play functionality
   useEffect(() => {
-    if (!isCarouselOpen || !isAutoPlaying) return;
+    if (!isCarouselOpen) return;
 
     const interval = setInterval(() => {
       nextSlide();
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [isCarouselOpen, isAutoPlaying, currentSlide]);
+  }, [isCarouselOpen, currentSlide, nextSlide]);
 
 
 
   // Render certificate image for carousel
-  const renderCertificateImage = (cert: Certificate, index: number) => (
+  const renderCertificateImage = (cert: Certificate) => (
     <div className="flex items-center justify-center h-full p-4">
       <div className="relative group max-w-full max-h-full cursor-pointer" onClick={() => handleViewCertificate(cert)}>
         <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 border border-gray-200 shadow-lg">

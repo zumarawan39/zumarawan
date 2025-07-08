@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 export default function AnimatedBackground() {
   const mountRef = useRef<HTMLDivElement>(null);
-  const theme = useSelector((state: any) => state.theme.mode); // 'light' | 'dark'
+  const theme = useSelector((state: Record<string, any>) => state.theme.mode); // 'light' | 'dark'
 
   useEffect(() => {
     const scene = new THREE.Scene();

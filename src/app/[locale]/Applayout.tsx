@@ -1,6 +1,5 @@
 
 import AnimatedBackground from "@/components/AnimatedBackground";
-import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/components/ScrolltoTop";
 import ThemeWrapper from "@/components/ThemeWrapper";
 import { Navbar , Footer} from "@/layout";
