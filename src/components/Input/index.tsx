@@ -2,22 +2,22 @@
 import React from 'react';
 import Styles from './input.module.scss';
 import { BiInfoCircle } from 'react-icons/bi';
-import { InputProps } from '@utils/types';
+// import { InputProps } from '@utils/types';
 import dynamic from 'next/dynamic';
 import { Controller } from 'react-hook-form';
 
-const PhoneInput = dynamic(() => import('@ui/components/InputPhoneWrapper/InputPhoneWrapper'), {
-  ssr: false,
-});
+// const PhoneInput = dynamic(() => import('@ui/components/InputPhoneWrapper/InputPhoneWrapper'), {
+//   ssr: false,
+// });
 import 'react-phone-input-2/lib/style.css';
 
-import parsePhoneNumber, {
-  CountryCode,
-  isPossiblePhoneNumber,
-  isValidPhoneNumber,
-  validatePhoneNumberLength,
-} from 'libphonenumber-js/max';
-const Input: React.FC<InputProps> = ({
+// import parsePhoneNumber, {
+//   CountryCode,
+//   isPossiblePhoneNumber,
+//   isValidPhoneNumber,
+//   validatePhoneNumberLength,
+// } from 'libphonenumber-js/max';
+const Input: React.FC<any> = ({
   name = '',
   validationSchema = {},
   label = '',
@@ -40,17 +40,17 @@ const Input: React.FC<InputProps> = ({
 }) => {
   const [isPhoneNumberValid, setIsPhoneNumberValid] = React.useState(false);
   const [isPhoneNumberTouched, setIsPhoneNumberTouched] = React.useState(false);
-  const validateMobileNumber = (number: string, countryCode: string) => {
-    try {
-      const phoneNumber = parsePhoneNumber(number, countryCode.toUpperCase());
-      if (!phoneNumber || !phoneNumber?.isValid() || phoneNumber.getType() !== 'MOBILE') {
-        return false;
-      }
-      return true;
-    } catch (error) {
-      return false;
-    }
-  };
+  // const validateMobileNumber = (number: string, countryCode: string) => {
+  //   try {
+  //     const phoneNumber = parsePhoneNumber(number, countryCode.toUpperCase());
+  //     if (!phoneNumber || !phoneNumber?.isValid() || phoneNumber.getType() !== 'MOBILE') {
+  //       return false;
+  //     }
+  //     return true;
+  //   } catch (error) {
+  //     return false;
+  //   }
+  // };
   return (
     <div className={`${Styles.inputWrapper} flex ${flex} w-full`}>
       {label && <label className={`mb-2.5 ${Styles.label}`}>{label}</label>}
@@ -102,30 +102,22 @@ const Input: React.FC<InputProps> = ({
             rules={validationSchema}
             render={({ field: { ref, ...field }, fieldState: { error } }) => (
               <>
-                <PhoneInput
+                <input
                   {...field}
-                  inputRef={ref}
-                  country={'us'}
-                  inputClass={`${(!error && isPhoneNumberTouched && isPhoneNumberValid) || error ? 'validation-error !outline !outline-1 !outline-danger' : ''} ${Styles.phoneInputField}`}
-                  buttonClass={Styles.phoneInputButton}
-                  enableSearch
-                  disableSearchIcon
-                  disabled={props.disabled}
-                  disableDropdown={props.disabled}
-                  onClick={() => setIsPhoneNumberTouched(true)}
-                  // onChange={(value) => field.onChange(value)} // Ensure it updates form state
-                  // onBlur={() => { field.onBlur(); }} // Ensures validation runs on blur
-                  isValid={(value: string, country: { iso2: string }) => {
-                    const is_valid = validateMobileNumber(value, country.iso2);
-
-                    setTimeout(() => {
-                      setIsPhoneNumberValid(!is_valid);
-                    }, 500);
-
-                    // always return true to hide built-in error message(means correct number)
-                    // show the error manually inside the set_timeout
-                    return true;
+                  type="text"
+                  autoComplete="off"
+                  placeholder="Enter phone number"
+                  className={`${(!error && isPhoneNumberTouched && isPhoneNumberValid) || error ? 'validation-error !outline !outline-1 !outline-danger' : ''} ${Styles.phoneInputField}`}
+                  maxLength={15}
+                  onBlur={() => { field.onBlur(); }}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    // Removed validateMobileNumber usage
+                    field.onChange(value);
                   }}
+                  value={field.value}
+                  disabled={props.disabled}
+                  name={name}
                 />
                 {error && (
                   <small className={`text-red ${Styles.error}`}>

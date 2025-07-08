@@ -48,7 +48,7 @@ function WhatIDo() {
       <h4 className="text-3xl sm:text-lg text-center">{t("techExpertise")}</h4>
       {Data.map((element, index) => (
         <WhatIDoCard
-          key={element.skillName}
+          key={index}
           MainSVG={element.MainSVG}
           skillName={element.skillName}
           iconsArr={element.iconsArr}

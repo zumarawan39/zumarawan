@@ -69,7 +69,7 @@ const Button: FC<ButtonProps> = ({
       {...rest}
     >
       {icon && textColor && (
-        <span className={`mr-1.5  ${Styles[textColor as keyof typeof Styles]}`}>
+        <span className={`mr-1.5  ${Styles[textColor as keyof typeof Styles] ?? ''}`}>
           {icon}
         </span>
       )}
@@ -101,9 +101,9 @@ const Button: FC<ButtonProps> = ({
       {!loading && (
         <span className="text-white flex items-center justify-between">
           {icon && (
-            <span className={`mr-1.5 mt-1 ${Styles[textColor]}`}>{icon}</span>
+            <span className={`mr-1.5 mt-1 ${Styles[textColor as keyof typeof Styles] ?? ''}`}>{icon}</span>
           )}{' '}
-          <span className={Styles[textColor]}>{children}</span>
+          <span className={Styles[textColor as keyof typeof Styles] ?? ''}>{children}</span>
         </span>
       )}
       {loading && (
