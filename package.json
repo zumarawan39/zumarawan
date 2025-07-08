@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://zumarawan39.github.io/NextjsPortfolio",
-"scripts": {
-  "build": "next build",
-  "export": "next build",
-  "predeploy": "next build",
-  "deploy": "gh-pages -d out"
-},
+  "scripts": {
+    "build": "next build",
+    "export": "next build",
+    "predeploy": "next build",
+    "deploy": "gh-pages -d out"
+  },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
