@@ -7,11 +7,23 @@
   display: inline-block;
   line-height: 1;
   color: variable.$white;
-  transition: 350ms all ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover:not([disabled]) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active:not([disabled]) {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
   &:disabled {
     background-color: rgb(114, 135, 242, 0.85);
@@ -70,6 +82,7 @@
 
   &:hover:not([disabled]) {
     background-color: #14B8A6;
+    transform: translateY(-2px) scale(1.02);
   }
 }
 

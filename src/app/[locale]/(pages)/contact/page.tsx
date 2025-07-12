@@ -237,7 +237,7 @@ const Contact = () => {
       <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight drop-shadow-xl">
         {t("cta_title")}
       </h2>
-      <p className="text-lg md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed text-white/90 drop-shadow">
+      <p className="text-lg md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
         {t("cta_description")}
       </p>
 
