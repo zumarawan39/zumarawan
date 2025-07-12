@@ -164,17 +164,19 @@ const Navbar = () => {
       </nav>
       {
         <>
-          {isMobileMenuOpen && (
-            <div
-              className="fixed inset-0 top-0 bg-black bg-opacity-60 z-10 transition-opacity duration-300 "
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
-          )}
           <div
-            className={`md:hidden fixed left-0 w-4/5 bg-white shadow-md transition-all duration-300 z-20 h-screen top-0 ${isScrolled ? "top-0" : ""} ${
+            className={`fixed inset-0 top-0 bg-black transition-all duration-500 ease-in-out z-10 ${
+              isMobileMenuOpen 
+                ? "bg-opacity-60 visible" 
+                : "bg-opacity-0 invisible"
+            }`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div
+            className={`md:hidden fixed left-0 w-4/5 bg-white shadow-md transition-all duration-500 ease-in-out z-20 h-screen top-0 ${isScrolled ? "top-0" : ""} ${
               isMobileMenuOpen
-                ? "opacity-100  translate-X-0 visible"
-                : "opacity-0  -translate-X-2 invisible"
+                ? "opacity-100 translate-x-0 visible"
+                : "opacity-0 -translate-x-full invisible"
             }`}
           >
             <div className="flex justify-between px-8 py-14 items-center">
