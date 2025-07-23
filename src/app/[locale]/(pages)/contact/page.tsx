@@ -241,7 +241,7 @@ const Contact = () => {
         {t("cta_description")}
       </p>
 
-      <div className="flex  sm:flex-col gap-4 justify-center hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+      <div className="flex  sm:flex-col gap-4 justify-center  transform hover:-translate-y-1 transition-all duration-300">
         <Button
           type="PrimaryOutline"
           className=""
